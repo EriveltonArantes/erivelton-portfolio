@@ -26,6 +26,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "academia-danca-api",
+    "titulo": "Academia Danca",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://academia-danca-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "academia-danca-api-frontend",
+    "titulo": "Academia Danca",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://academia-danca-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "academia-fitness-api",
     "titulo": "Academia Fitness",
     "descricao": "",
@@ -198,6 +224,46 @@
     "tipo": "frontend"
   },
   {
+    "nome": "cartorio-api",
+    "titulo": "Cartorio",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://cartorio-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "cartorio-api-frontend",
+    "titulo": "Cartorio",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://cartorio-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-estetica-api",
+    "titulo": "Clinica Estetica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-estetica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "clinica-medica-api",
     "titulo": "Clinica Medica",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -221,6 +287,58 @@
       "JavaScript"
     ],
     "url": "https://clinica-medica-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-nutricao-api",
+    "titulo": "Clinica Nutricao",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-nutricao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clinica-nutricao-api-frontend",
+    "titulo": "Clinica Nutricao",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-nutricao-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-odontologica-api",
+    "titulo": "Clinica Odontologica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-odontologica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clinica-odontologica-api-frontend",
+    "titulo": "Clinica Odontologica",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-odontologica-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -378,7 +496,7 @@
       "JWT",
       "Swagger"
     ],
-    "url": "https://crm-api.onrender.com",
+    "url": "https://crm-api-56e0.onrender.com",
     "tipo": "backend"
   },
   {
@@ -552,6 +670,32 @@
     "tipo": "backend"
   },
   {
+    "nome": "escola-musica-api",
+    "titulo": "Escola Musica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://escola-musica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "escola-musica-api-frontend",
+    "titulo": "Escola Musica",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://escola-musica-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "estacionamento-api",
     "titulo": "Estacionamento",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -680,7 +824,7 @@
       "JWT",
       "Swagger"
     ],
-    "url": "https://frota-api.onrender.com",
+    "url": "https://frota-api-1qa8.onrender.com",
     "tipo": "backend"
   },
   {
@@ -706,7 +850,7 @@
       "JWT",
       "Swagger"
     ],
-    "url": "https://helpdesk-api.onrender.com",
+    "url": "https://helpdesk-api-zvz8.onrender.com",
     "tipo": "backend"
   },
   {
@@ -850,8 +994,20 @@
       "JWT",
       "Swagger"
     ],
-    "url": "https://lavanderia-api.onrender.com",
+    "url": "https://lavanderia-api-0f0f.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "lavanderia-api-frontend",
+    "titulo": "Lavanderia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://lavanderia-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "locacao-api",
@@ -1092,7 +1248,7 @@
       "JWT",
       "Swagger"
     ],
-    "url": "https://ponto-api.onrender.com",
+    "url": "https://ponto-api-5j2s.onrender.com",
     "tipo": "backend"
   },
   {
