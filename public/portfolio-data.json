@@ -80,6 +80,32 @@
     "tipo": "backend"
   },
   {
+    "nome": "adocao-animal-api",
+    "titulo": "Adocao Animal",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://adocao-animal-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "adocao-animal-api-frontend",
+    "titulo": "Adocao Animal",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://adocao-animal-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "advocacia-processos-api",
     "titulo": "Advocacia Processos",
     "descricao": "",
@@ -247,6 +273,32 @@
       "JavaScript"
     ],
     "url": "https://biblioteca-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "carteira-investimentos-api",
+    "titulo": "Carteira Investimentos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://carteira-investimentos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "carteira-investimentos-api-frontend",
+    "titulo": "Carteira Investimentos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://carteira-investimentos-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -455,6 +507,32 @@
       "JavaScript"
     ],
     "url": "https://clube-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clube-social-api",
+    "titulo": "Clube Social",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clube-social-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clube-social-api-frontend",
+    "titulo": "Clube Social",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clube-social-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -970,6 +1048,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "farmacia-manipulacao-api-frontend",
+    "titulo": "Farmacia Manipulacao",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://farmacia-manipulacao-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "financeiro-pessoal-api",
     "titulo": "Financeiro Pessoal",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1267,6 +1357,32 @@
       "JavaScript"
     ],
     "url": "https://lavanderia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "leilao-api",
+    "titulo": "Leilao",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://leilao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "leilao-api-frontend",
+    "titulo": "Leilao",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://leilao-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1680,6 +1796,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "pousada-api",
+    "titulo": "Pousada",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://pousada-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "prestador-servicos-api",
     "titulo": "Prestador Servicos",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1927,6 +2057,32 @@
       "JavaScript"
     ],
     "url": "https://sinistro-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "terapia-api",
+    "titulo": "Terapia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://terapia-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "terapia-api-frontend",
+    "titulo": "Terapia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://terapia-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
