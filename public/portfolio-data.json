@@ -224,6 +224,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "assistencia-tecnica-api",
+    "titulo": "Assistencia Tecnica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://assistencia-tecnica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "barbearia-api",
     "titulo": "Barbearia",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -273,6 +287,32 @@
       "JavaScript"
     ],
     "url": "https://biblioteca-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "bufet-eventos-api",
+    "titulo": "Bufet Eventos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://bufet-eventos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "bufet-eventos-api-frontend",
+    "titulo": "Bufet Eventos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://bufet-eventos-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -600,6 +640,32 @@
     ],
     "url": "https://condominio-gestor-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "consultoria-rh-api",
+    "titulo": "Consultoria Rh",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://consultoria-rh-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "consultoria-rh-api-frontend",
+    "titulo": "Consultoria Rh",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://consultoria-rh-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "contabilidade-api",
@@ -1808,6 +1874,18 @@
     ],
     "url": "https://pousada-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "pousada-api-frontend",
+    "titulo": "Pousada",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://pousada-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "prestador-servicos-api",
