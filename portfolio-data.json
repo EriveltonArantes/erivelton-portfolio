@@ -1,0 +1,1334 @@
+[
+  {
+    "nome": "academia-api",
+    "titulo": "Academia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://academia-api-7k17.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "academia-api-frontend",
+    "titulo": "Academia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://academia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "academia-fitness-api",
+    "titulo": "Academia Fitness",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://academia-fitness-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "academia-mensalidade-api",
+    "titulo": "Academia Mensalidade",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://academia-mensalidade-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "advocacia-processos-api",
+    "titulo": "Advocacia Processos",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://advocacia-processos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "agendamento-api",
+    "titulo": "Agendamento",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://agendamento-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "agendamento-api-frontend",
+    "titulo": "Agendamento",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://agendamento-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "agro-api",
+    "titulo": "Agro",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://agro-api-thwk.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "agro-api-frontend",
+    "titulo": "Agro",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://agro-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "aluguel-temporada-api",
+    "titulo": "Aluguel Temporada",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://aluguel-temporada-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "aluguel-temporada-api-frontend",
+    "titulo": "Aluguel Temporada",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://aluguel-temporada-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "barbearia-api",
+    "titulo": "Barbearia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://barbearia-api-av7p.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "barbearia-api-frontend",
+    "titulo": "Barbearia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://barbearia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "biblioteca-api",
+    "titulo": "Biblioteca",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://biblioteca-api-rva9.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "biblioteca-api-frontend",
+    "titulo": "Biblioteca",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://biblioteca-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-medica-api",
+    "titulo": "Clinica Medica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-medica-api-jtkj.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clinica-medica-api-frontend",
+    "titulo": "Clinica Medica",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-medica-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-psicologia-api",
+    "titulo": "Clinica Psicologia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-psicologia-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clinica-psicologia-api-frontend",
+    "titulo": "Clinica Psicologia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-psicologia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-veterinaria-api",
+    "titulo": "Clinica Veterinaria",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-veterinaria-api-xyqk.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clinica-veterinaria-api-frontend",
+    "titulo": "Clinica Veterinaria",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-veterinaria-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clube-api",
+    "titulo": "Clube",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clube-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clube-api-frontend",
+    "titulo": "Clube",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clube-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "condominio-api",
+    "titulo": "Condominio",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://condominio-api-pq4j.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "condominio-api-frontend",
+    "titulo": "Condominio",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://condominio-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "condominio-gestor-api",
+    "titulo": "Condominio Gestor",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://condominio-gestor-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "contabilidade-api",
+    "titulo": "Contabilidade",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://contabilidade-api-yqgg.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "contabilidade-api-frontend",
+    "titulo": "Contabilidade",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://contabilidade-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "crm-api",
+    "titulo": "Crm",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://crm-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "crm-api-frontend",
+    "titulo": "Crm",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://crm-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "delivery-api",
+    "titulo": "Delivery",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://delivery-api-fak4.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "delivery-api-frontend",
+    "titulo": "Delivery",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://delivery-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "ecommerce-api",
+    "titulo": "Ecommerce",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://ecommerce-api-92ou.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "ecommerce-api-frontend",
+    "titulo": "Ecommerce",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://ecommerce-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "educacao-online-api",
+    "titulo": "Educacao Online",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://educacao-online-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "educacao-online-api-frontend",
+    "titulo": "Educacao Online",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://educacao-online-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "escola-api",
+    "titulo": "Escola",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://escola-api-7e9n.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "escola-api-frontend",
+    "titulo": "Escola",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://escola-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "escola-gestao-api",
+    "titulo": "Escola Gestao",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://escola-gestao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "escola-idiomas-api",
+    "titulo": "Escola Idiomas",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://escola-idiomas-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "escola-idiomas-api-frontend",
+    "titulo": "Escola Idiomas",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://escola-idiomas-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "escola-infantil-api",
+    "titulo": "Escola Infantil",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://escola-infantil-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "estacionamento-api",
+    "titulo": "Estacionamento",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://estacionamento-api-u7gr.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "estacionamento-api-frontend",
+    "titulo": "Estacionamento",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://estacionamento-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "eventos-api",
+    "titulo": "Eventos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://eventos-api-udpd.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "eventos-api-frontend",
+    "titulo": "Eventos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://eventos-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "farmacia-api",
+    "titulo": "Farmacia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://farmacia-api-g4zi.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "farmacia-api-frontend",
+    "titulo": "Farmacia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://farmacia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "farmacia-digital-api",
+    "titulo": "Farmacia Digital",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://farmacia-digital-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "financeiro-pessoal-api",
+    "titulo": "Financeiro Pessoal",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://financeiro-pessoal-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "financeiro-pessoal-api-frontend",
+    "titulo": "Financeiro Pessoal",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://financeiro-pessoal-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "frota-api",
+    "titulo": "Frota",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://frota-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "frota-api-frontend",
+    "titulo": "Frota",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://frota-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "helpdesk-api",
+    "titulo": "Helpdesk",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://helpdesk-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "helpdesk-api-frontend",
+    "titulo": "Helpdesk",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://helpdesk-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "hospital-api",
+    "titulo": "Hospital",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://hospital-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "hospital-api-frontend",
+    "titulo": "Hospital",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://hospital-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "hotel-api",
+    "titulo": "Hotel",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://hotel-api-ul8w.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "hotel-api-frontend",
+    "titulo": "Hotel",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://hotel-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "imobiliaria-api",
+    "titulo": "Imobiliaria",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://imobiliaria-api-275k.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "imobiliaria-api-frontend",
+    "titulo": "Imobiliaria",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://imobiliaria-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "imobiliaria-corretor-api",
+    "titulo": "Imobiliaria Corretor",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://imobiliaria-corretor-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "juridico-api",
+    "titulo": "Juridico",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://juridico-api-u7o8.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "juridico-api-frontend",
+    "titulo": "Juridico",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://juridico-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "lavanderia-api",
+    "titulo": "Lavanderia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://lavanderia-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "locacao-api",
+    "titulo": "Locacao",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://locacao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "locacao-api-frontend",
+    "titulo": "Locacao",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://locacao-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "locadora-veiculos-api",
+    "titulo": "Locadora Veiculos",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://locadora-veiculos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "loja-virtual-api",
+    "titulo": "Loja Virtual",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://loja-virtual-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "loja-virtual-api-frontend",
+    "titulo": "Loja Virtual",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://loja-virtual-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "loja-virtual-completa-api",
+    "titulo": "Loja Virtual Completa",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://loja-virtual-completa-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "obras-api",
+    "titulo": "Obras",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://obras-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "obras-api-frontend",
+    "titulo": "Obras",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://obras-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "odontologia-clinica-api",
+    "titulo": "Odontologia Clinica",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://odontologia-clinica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "oficina-auto-api",
+    "titulo": "Oficina Auto",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://oficina-auto-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "oficina-auto-api-frontend",
+    "titulo": "Oficina Auto",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://oficina-auto-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "oficina-mecanica-api",
+    "titulo": "Oficina Mecanica",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://oficina-mecanica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "otica-gestao-api",
+    "titulo": "Otica Gestao",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://otica-gestao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "petshop-api",
+    "titulo": "Petshop",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://petshop-api-c0oe.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "petshop-api-frontend",
+    "titulo": "Petshop",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://petshop-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "petshop-banho-tosa-api",
+    "titulo": "Petshop Banho Tosa",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://petshop-banho-tosa-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "petshop-clinica-api",
+    "titulo": "Petshop Clinica",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://petshop-clinica-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "ponto-api",
+    "titulo": "Ponto",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://ponto-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "ponto-api-frontend",
+    "titulo": "Ponto",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://ponto-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "prestador-servicos-api",
+    "titulo": "Prestador Servicos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://prestador-servicos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "prestador-servicos-api-frontend",
+    "titulo": "Prestador Servicos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://prestador-servicos-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "rede-barbearias-api",
+    "titulo": "Rede Barbearias",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://rede-barbearias-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "restaurante-api",
+    "titulo": "Restaurante",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://restaurante-api-rojm.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "restaurante-api-frontend",
+    "titulo": "Restaurante",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://restaurante-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "restaurante-pdv-api",
+    "titulo": "Restaurante Pdv",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://restaurante-pdv-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "rh-api",
+    "titulo": "Rh",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://rh-api-4fee.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "rh-api-frontend",
+    "titulo": "Rh",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://rh-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "rh-empresarial-api",
+    "titulo": "Rh Empresarial",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://rh-empresarial-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "salao-beleza-api",
+    "titulo": "Salao Beleza",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://salao-beleza-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "salao-beleza-api-frontend",
+    "titulo": "Salao Beleza",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://salao-beleza-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "saude-fitness-api",
+    "titulo": "Saude Fitness",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://saude-fitness-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "saude-fitness-api-frontend",
+    "titulo": "Saude Fitness",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://saude-fitness-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "seguro-api",
+    "titulo": "Seguro",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://seguro-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "seguro-api-frontend",
+    "titulo": "Seguro",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://seguro-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "transporte-api",
+    "titulo": "Transporte",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://transporte-api-v0fe.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "transporte-api-frontend",
+    "titulo": "Transporte",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://transporte-api-frontend.onrender.com",
+    "tipo": "frontend"
+  }
+]
