@@ -472,6 +472,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "concessionaria-api-frontend",
+    "titulo": "Concessionaria",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://concessionaria-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "condominio-api",
     "titulo": "Condominio",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -720,6 +732,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "energia-solar-api",
+    "titulo": "Energia Solar",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://energia-solar-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "energia-solar-api-frontend",
+    "titulo": "Energia Solar",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://energia-solar-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "escola-api",
     "titulo": "Escola",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -918,6 +956,20 @@
     "tipo": "backend"
   },
   {
+    "nome": "farmacia-manipulacao-api",
+    "titulo": "Farmacia Manipulacao",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://farmacia-manipulacao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "financeiro-pessoal-api",
     "titulo": "Financeiro Pessoal",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -941,6 +993,32 @@
       "JavaScript"
     ],
     "url": "https://financeiro-pessoal-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "fluxo-caixa-api",
+    "titulo": "Fluxo Caixa",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://fluxo-caixa-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "fluxo-caixa-api-frontend",
+    "titulo": "Fluxo Caixa",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://fluxo-caixa-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -993,6 +1071,32 @@
       "JavaScript"
     ],
     "url": "https://frota-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "gestao-projetos-api",
+    "titulo": "Gestao Projetos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://gestao-projetos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "gestao-projetos-api-frontend",
+    "titulo": "Gestao Projetos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://gestao-projetos-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1298,6 +1402,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "marketing-digital-api",
+    "titulo": "Marketing Digital",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://marketing-digital-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "marketing-digital-api-frontend",
+    "titulo": "Marketing Digital",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://marketing-digital-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "obras-api",
     "titulo": "Obras",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1573,6 +1703,32 @@
       "JavaScript"
     ],
     "url": "https://prestador-servicos-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "producao-industrial-api",
+    "titulo": "Producao Industrial",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://producao-industrial-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "producao-industrial-api-frontend",
+    "titulo": "Producao Industrial",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://producao-industrial-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
