@@ -264,6 +264,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "armazenagem-api-frontend",
+    "titulo": "Armazenagem",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://armazenagem-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "assinatura-api",
     "titulo": "Assinatura",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -469,6 +481,32 @@
       "JavaScript"
     ],
     "url": "https://cartorio-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "central-atendimento-api",
+    "titulo": "Central Atendimento",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://central-atendimento-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "central-atendimento-api-frontend",
+    "titulo": "Central Atendimento",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://central-atendimento-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1410,6 +1448,20 @@
     ],
     "url": "https://frota-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "gestao-academica-api",
+    "titulo": "Gestao Academica",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://gestao-academica-api.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "gestao-contratos-api",
@@ -2499,6 +2551,32 @@
       "JavaScript"
     ],
     "url": "https://transporte-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "viagens-corporativas-api",
+    "titulo": "Viagens Corporativas",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://viagens-corporativas-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "viagens-corporativas-api-frontend",
+    "titulo": "Viagens Corporativas",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://viagens-corporativas-api-frontend.onrender.com",
     "tipo": "frontend"
   }
 ]
