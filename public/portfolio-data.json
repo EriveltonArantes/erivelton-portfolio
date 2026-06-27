@@ -264,6 +264,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "clinica-estetica-api-frontend",
+    "titulo": "Clinica Estetica",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clinica-estetica-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "clinica-medica-api",
     "titulo": "Clinica Medica",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -484,6 +496,20 @@
     ],
     "url": "https://contabilidade-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "cooperativa-api",
+    "titulo": "Cooperativa",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://cooperativa-api.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "crm-api",
@@ -1010,6 +1036,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "licitacao-api",
+    "titulo": "Licitacao",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://licitacao-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "licitacao-api-frontend",
+    "titulo": "Licitacao",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://licitacao-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "locacao-api",
     "titulo": "Locacao",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1088,6 +1140,32 @@
     ],
     "url": "https://loja-virtual-completa-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "manutencao-predial-api",
+    "titulo": "Manutencao Predial",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://manutencao-predial-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "manutencao-predial-api-frontend",
+    "titulo": "Manutencao Predial",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://manutencao-predial-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "obras-api",
