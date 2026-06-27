@@ -40,6 +40,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "academia-crossfit-api-frontend",
+    "titulo": "Academia Crossfit",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://academia-crossfit-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "academia-danca-api",
     "titulo": "Academia Danca",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1360,6 +1372,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "gestao-obras-api",
+    "titulo": "Gestao Obras",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://gestao-obras-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "gestao-obras-api-frontend",
+    "titulo": "Gestao Obras",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://gestao-obras-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "gestao-projetos-api",
     "titulo": "Gestao Projetos",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1846,6 +1884,32 @@
     "tipo": "backend"
   },
   {
+    "nome": "operadora-saude-api",
+    "titulo": "Operadora Saude",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://operadora-saude-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "operadora-saude-api-frontend",
+    "titulo": "Operadora Saude",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://operadora-saude-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "otica-gestao-api",
     "titulo": "Otica Gestao",
     "descricao": "",
@@ -2266,6 +2330,20 @@
     ],
     "url": "https://seguro-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "seguros-vida-api",
+    "titulo": "Seguros Vida",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://seguros-vida-api.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "sinistro-api",
