@@ -250,6 +250,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "armazenagem-api",
+    "titulo": "Armazenagem",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://armazenagem-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "assinatura-api",
     "titulo": "Assinatura",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -637,6 +651,32 @@
       "JavaScript"
     ],
     "url": "https://clube-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "clube-fidelidade-api",
+    "titulo": "Clube Fidelidade",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clube-fidelidade-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "clube-fidelidade-api-frontend",
+    "titulo": "Clube Fidelidade",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clube-fidelidade-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1291,6 +1331,32 @@
       "JavaScript"
     ],
     "url": "https://fluxo-caixa-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "franquia-api",
+    "titulo": "Franquia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://franquia-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "franquia-api-frontend",
+    "titulo": "Franquia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://franquia-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -2344,6 +2410,18 @@
     ],
     "url": "https://seguros-vida-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "seguros-vida-api-frontend",
+    "titulo": "Seguros Vida",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://seguros-vida-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "sinistro-api",
