@@ -120,6 +120,20 @@
     "tipo": "backend"
   },
   {
+    "nome": "agencia-turismo-api",
+    "titulo": "Agencia Turismo",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://agencia-turismo-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "agendamento-api",
     "titulo": "Agendamento",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -236,6 +250,44 @@
     ],
     "url": "https://assistencia-tecnica-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "assistencia-tecnica-api-frontend",
+    "titulo": "Assistencia Tecnica",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://assistencia-tecnica-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "autoescola-api",
+    "titulo": "Autoescola",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://autoescola-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "autoescola-api-frontend",
+    "titulo": "Autoescola",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://autoescola-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "barbearia-api",
@@ -1607,6 +1659,32 @@
       "JavaScript"
     ],
     "url": "https://marketing-digital-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "microfinancas-api",
+    "titulo": "Microfinancas",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://microfinancas-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "microfinancas-api-frontend",
+    "titulo": "Microfinancas",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://microfinancas-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
