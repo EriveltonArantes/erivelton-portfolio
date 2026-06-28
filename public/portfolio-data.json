@@ -1306,6 +1306,32 @@
         "tipo":  "frontend"
     },
     {
+        "nome":  "escola-tecnica-api",
+        "titulo":  "Escola Tecnica",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://escola-tecnica-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "escola-tecnica-api-frontend",
+        "titulo":  "Escola Tecnica",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://escola-tecnica-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "estacionamento-api",
         "titulo":  "Estacionamento",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1698,6 +1724,18 @@
         "tipo":  "backend"
     },
     {
+        "nome":  "gestao-residuos-api-frontend",
+        "titulo":  "Gestao Residuos",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://gestao-residuos-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "helpdesk-api",
         "titulo":  "Helpdesk",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1986,6 +2024,20 @@
         "tipo":  "backend"
     },
     {
+        "nome":  "loja-construcao-api",
+        "titulo":  "Loja Construcao",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://loja-construcao-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
         "nome":  "loja-virtual-api",
         "titulo":  "Loja Virtual",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2260,7 +2312,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://patrimonio-api.onrender.com",
+        "url":  "https://patrimonio-api-eqwc.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -2776,6 +2828,32 @@
         "tipo":  "frontend"
     },
     {
+        "nome":  "spa-bem-estar-api",
+        "titulo":  "Spa Bem Estar",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://spa-bem-estar-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "spa-bem-estar-api-frontend",
+        "titulo":  "Spa Bem Estar",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://spa-bem-estar-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "telemedicina-api",
         "titulo":  "Telemedicina",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2880,15 +2958,15 @@
         "tipo":  "frontend"
     },
     {
-        "nome":  "gestao-residuos-api-frontend",
-        "titulo":  "Gestao Residuos",
+        "nome":  "loja-construcao-api-frontend",
+        "titulo":  "Loja Construcao",
         "descricao":  "",
         "tecnologias":  [
                             "React",
                             "Vite",
                             "JavaScript"
                         ],
-        "url":  "https://gestao-residuos-api-frontend.onrender.com",
+        "url":  "https://loja-construcao-api-frontend.onrender.com",
         "tipo":  "frontend"
     }
 ]
