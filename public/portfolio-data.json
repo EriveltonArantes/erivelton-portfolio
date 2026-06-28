@@ -2668,6 +2668,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "prestacao-contas-api",
+    "titulo": "Prestacao Contas",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://prestacao-contas-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "prestador-servicos-api",
     "titulo": "Prestador Servicos",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
