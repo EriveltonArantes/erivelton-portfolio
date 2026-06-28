@@ -302,6 +302,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "assistencia-social-api",
+    "titulo": "Assistencia Social",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://assistencia-social-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "assistencia-social-api-frontend",
+    "titulo": "Assistencia Social",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://assistencia-social-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "assistencia-tecnica-api",
     "titulo": "Assistencia Tecnica",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -742,6 +768,20 @@
     ],
     "url": "https://clube-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "clube-esportivo-api",
+    "titulo": "Clube Esportivo",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clube-esportivo-api.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "clube-fidelidade-api",
@@ -2682,6 +2722,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "prestacao-contas-api-frontend",
+    "titulo": "Prestacao Contas",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://prestacao-contas-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "prestador-servicos-api",
     "titulo": "Prestador Servicos",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2772,6 +2824,32 @@
     ],
     "url": "https://rede-barbearias-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "registro-imoveis-api",
+    "titulo": "Registro Imoveis",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://registro-imoveis-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "registro-imoveis-api-frontend",
+    "titulo": "Registro Imoveis",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://registro-imoveis-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "restaurante-api",
