@@ -182,7 +182,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://agendamento-api.onrender.com",
+        "url":  "https://agendamento-api-6qj3.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -598,7 +598,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://clinica-odontologica-api.onrender.com",
+        "url":  "https://clinica-odontologica-api-94vp.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -638,6 +638,20 @@
                         ],
         "url":  "https://clinica-psicologia-api-frontend.onrender.com",
         "tipo":  "frontend"
+    },
+    {
+        "nome":  "clinica-reabilitacao-api",
+        "titulo":  "Clinica Reabilitacao",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://clinica-reabilitacao-api.onrender.com",
+        "tipo":  "backend"
     },
     {
         "nome":  "clinica-veterinaria-api",
@@ -1186,7 +1200,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://escola-musica-api.onrender.com",
+        "url":  "https://escola-musica-api-qxeq.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -1499,6 +1513,32 @@
                             "JavaScript"
                         ],
         "url":  "https://gestao-contratos-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
+        "nome":  "gestao-membros-api",
+        "titulo":  "Gestao Membros",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://gestao-membros-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "gestao-membros-api-frontend",
+        "titulo":  "Gestao Membros",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://gestao-membros-api-frontend.onrender.com",
         "tipo":  "frontend"
     },
     {
@@ -2054,6 +2094,32 @@
         "tipo":  "backend"
     },
     {
+        "nome":  "ouvidoria-api",
+        "titulo":  "Ouvidoria",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://ouvidoria-api-u0id.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "ouvidoria-api-frontend",
+        "titulo":  "Ouvidoria",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://ouvidoria-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "patrimonio-api",
         "titulo":  "Patrimonio",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2514,6 +2580,20 @@
         "tipo":  "frontend"
     },
     {
+        "nome":  "servicos-domiciliares-api",
+        "titulo":  "Servicos Domiciliares",
+        "descricao":  "",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://servicos-domiciliares-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
         "nome":  "sinistro-api",
         "titulo":  "Sinistro",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2550,8 +2630,20 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://telemedicina-api.onrender.com",
+        "url":  "https://telemedicina-api-ghbs.onrender.com",
         "tipo":  "backend"
+    },
+    {
+        "nome":  "telemedicina-api-frontend",
+        "titulo":  "Telemedicina",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://telemedicina-api-frontend.onrender.com",
+        "tipo":  "frontend"
     },
     {
         "nome":  "terapia-api",
@@ -2632,41 +2724,15 @@
         "tipo":  "frontend"
     },
     {
-        "nome":  "telemedicina-api-frontend",
-        "titulo":  "Telemedicina",
+        "nome":  "clinica-reabilitacao-api-frontend",
+        "titulo":  "Clinica Reabilitacao",
         "descricao":  "",
         "tecnologias":  [
                             "React",
                             "Vite",
                             "JavaScript"
                         ],
-        "url":  "https://telemedicina-api-frontend.onrender.com",
-        "tipo":  "frontend"
-    },
-    {
-        "nome":  "servicos-domiciliares-api",
-        "titulo":  "Servicos Domiciliares",
-        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
-        "tecnologias":  [
-                            "Spring Boot 3",
-                            "Java 21",
-                            "PostgreSQL",
-                            "JWT",
-                            "Swagger"
-                        ],
-        "url":  "https://servicos-domiciliares-api.onrender.com",
-        "tipo":  "backend"
-    },
-    {
-        "nome":  "servicos-domiciliares-api-frontend",
-        "titulo":  "Servicos Domiciliares",
-        "descricao":  "",
-        "tecnologias":  [
-                            "React",
-                            "Vite",
-                            "JavaScript"
-                        ],
-        "url":  "https://servicos-domiciliares-api-frontend.onrender.com",
+        "url":  "https://clinica-reabilitacao-api-frontend.onrender.com",
         "tipo":  "frontend"
     }
 ]
