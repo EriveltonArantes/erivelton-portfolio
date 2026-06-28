@@ -848,6 +848,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "concurso-publico-api",
+    "titulo": "Concurso Publico",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://concurso-publico-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "concurso-publico-api-frontend",
+    "titulo": "Concurso Publico",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://concurso-publico-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "condominio-api",
     "titulo": "Condominio",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1632,6 +1658,46 @@
     "tipo": "frontend"
   },
   {
+    "nome": "gestao-eventos-api",
+    "titulo": "Gestao Eventos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://gestao-eventos-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "gestao-frotas-api",
+    "titulo": "Gestao Frotas",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://gestao-frotas-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "gestao-frotas-api-frontend",
+    "titulo": "Gestao Frotas",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://gestao-frotas-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "gestao-membros-api",
     "titulo": "Gestao Membros",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2180,6 +2246,18 @@
     ],
     "url": "https://medicina-trabalho-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "medicina-trabalho-api-frontend",
+    "titulo": "Medicina Trabalho",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://medicina-trabalho-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "microfinancas-api",
