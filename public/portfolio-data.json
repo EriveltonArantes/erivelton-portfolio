@@ -628,6 +628,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "clinica-medica-fastapi",
+    "titulo": "Clinica Medica",
+    "descricao": "",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://clinica-medica-fastapi.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "clinica-nutricao-api",
     "titulo": "Clinica Nutricao",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2401,6 +2415,20 @@
       "Swagger"
     ],
     "url": "https://loja-virtual-completa-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "loja-virtual-fastapi",
+    "titulo": "Loja Virtual",
+    "descricao": "",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://loja-virtual-fastapi.onrender.com",
     "tipo": "backend"
   },
   {
