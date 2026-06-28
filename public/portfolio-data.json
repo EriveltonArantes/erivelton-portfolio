@@ -406,6 +406,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "barbearia-fastapi",
+    "titulo": "Barbearia",
+    "descricao": "",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://barbearia-fastapi.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "biblioteca-api",
     "titulo": "Biblioteca",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1788,6 +1802,18 @@
     ],
     "url": "https://gestao-biblioteca-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "gestao-biblioteca-api-frontend",
+    "titulo": "Gestao Biblioteca",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://gestao-biblioteca-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "gestao-contratos-api",
