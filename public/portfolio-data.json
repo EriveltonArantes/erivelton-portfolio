@@ -784,6 +784,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "clube-esportivo-api-frontend",
+    "titulo": "Clube Esportivo",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://clube-esportivo-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "clube-fidelidade-api",
     "titulo": "Clube Fidelidade",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1029,6 +1041,32 @@
       "JavaScript"
     ],
     "url": "https://contabilidade-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "contrato-servico-api",
+    "titulo": "Contrato Servico",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://contrato-servico-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "contrato-servico-api-frontend",
+    "titulo": "Contrato Servico",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://contrato-servico-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1983,6 +2021,20 @@
       "Swagger"
     ],
     "url": "https://imobiliaria-corretor-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "industria-alimentos-api",
+    "titulo": "Industria Alimentos",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://industria-alimentos-api.onrender.com",
     "tipo": "backend"
   },
   {
@@ -2981,6 +3033,32 @@
       "JavaScript"
     ],
     "url": "https://saude-fitness-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "saude-mental-api",
+    "titulo": "Saude Mental",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://saude-mental-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "saude-mental-api-frontend",
+    "titulo": "Saude Mental",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://saude-mental-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
