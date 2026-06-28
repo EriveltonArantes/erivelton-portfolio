@@ -1122,6 +1122,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "deposito-api",
+    "titulo": "Deposito",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://deposito-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "distribuidora-api",
     "titulo": "Distribuidora",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -1670,6 +1684,18 @@
     ],
     "url": "https://gestao-eventos-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "gestao-eventos-api-frontend",
+    "titulo": "Gestao Eventos",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://gestao-eventos-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "gestao-frotas-api",
@@ -2536,6 +2562,32 @@
     ],
     "url": "https://petshop-clinica-api.onrender.com",
     "tipo": "backend"
+  },
+  {
+    "nome": "plano-saude-api",
+    "titulo": "Plano Saude",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://plano-saude-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "plano-saude-api-frontend",
+    "titulo": "Plano Saude",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://plano-saude-api-frontend.onrender.com",
+    "tipo": "frontend"
   },
   {
     "nome": "ponto-api",
