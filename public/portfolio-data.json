@@ -432,6 +432,32 @@
         "tipo":  "frontend"
     },
     {
+        "nome":  "cartao-fidelidade-api",
+        "titulo":  "Cartao Fidelidade",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://cartao-fidelidade-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "cartao-fidelidade-api-frontend",
+        "titulo":  "Cartao Fidelidade",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://cartao-fidelidade-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "carteira-investimentos-api",
         "titulo":  "Carteira Investimentos",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -976,7 +1002,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://cooperativa-api.onrender.com",
+        "url":  "https://cooperativa-api-hs5m.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -1486,7 +1512,7 @@
                             "JWT",
                             "Swagger"
                         ],
-        "url":  "https://frete-api.onrender.com",
+        "url":  "https://frete-api-9f49.onrender.com",
         "tipo":  "backend"
     },
     {
@@ -1656,6 +1682,20 @@
                         ],
         "url":  "https://gestao-projetos-api-frontend.onrender.com",
         "tipo":  "frontend"
+    },
+    {
+        "nome":  "gestao-residuos-api",
+        "titulo":  "Gestao Residuos",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://gestao-residuos-api.onrender.com",
+        "tipo":  "backend"
     },
     {
         "nome":  "helpdesk-api",
@@ -1903,6 +1943,32 @@
                             "JavaScript"
                         ],
         "url":  "https://locacao-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
+        "nome":  "locacao-equipamentos-api",
+        "titulo":  "Locacao Equipamentos",
+        "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
+        "tecnologias":  [
+                            "Spring Boot 3",
+                            "Java 21",
+                            "PostgreSQL",
+                            "JWT",
+                            "Swagger"
+                        ],
+        "url":  "https://locacao-equipamentos-api.onrender.com",
+        "tipo":  "backend"
+    },
+    {
+        "nome":  "locacao-equipamentos-api-frontend",
+        "titulo":  "Locacao Equipamentos",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://locacao-equipamentos-api-frontend.onrender.com",
         "tipo":  "frontend"
     },
     {
@@ -2606,6 +2672,18 @@
         "tipo":  "backend"
     },
     {
+        "nome":  "seguranca-patrimonial-api-frontend",
+        "titulo":  "Seguranca Patrimonial",
+        "descricao":  "",
+        "tecnologias":  [
+                            "React",
+                            "Vite",
+                            "JavaScript"
+                        ],
+        "url":  "https://seguranca-patrimonial-api-frontend.onrender.com",
+        "tipo":  "frontend"
+    },
+    {
         "nome":  "seguro-api",
         "titulo":  "Seguro",
         "descricao":  "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2802,15 +2880,15 @@
         "tipo":  "frontend"
     },
     {
-        "nome":  "seguranca-patrimonial-api-frontend",
-        "titulo":  "Seguranca Patrimonial",
+        "nome":  "gestao-residuos-api-frontend",
+        "titulo":  "Gestao Residuos",
         "descricao":  "",
         "tecnologias":  [
                             "React",
                             "Vite",
                             "JavaScript"
                         ],
-        "url":  "https://seguranca-patrimonial-api-frontend.onrender.com",
+        "url":  "https://gestao-residuos-api-frontend.onrender.com",
         "tipo":  "frontend"
     }
 ]
