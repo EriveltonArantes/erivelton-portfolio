@@ -80,7 +80,7 @@
   {
     "nome": "academia-fitness-api",
     "titulo": "Academia Fitness",
-    "descricao": "",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
     "tecnologias": [
       "Spring Boot 3",
       "Java 21",
@@ -89,6 +89,20 @@
       "Swagger"
     ],
     "url": "https://academia-fitness-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "academia-fitness-fastapi",
+    "titulo": "Academia Fitness",
+    "descricao": "API REST construída com FastAPI + SQLAlchemy + PostgreSQL.",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://academia-fitness-fastapi.onrender.com",
     "tipo": "backend"
   },
   {
@@ -380,6 +394,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "badi-teste-oficina-java",
+    "titulo": "Badi Teste Oficina Java",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://badi-teste-oficina-java.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "barbearia-api",
     "titulo": "Barbearia",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -628,6 +656,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "clinica-medica-api-v2",
+    "titulo": "Clinica Medica V2",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-medica-api-v2.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "clinica-medica-fastapi",
     "titulo": "Clinica Medica",
     "descricao": "",
@@ -744,6 +786,20 @@
     ],
     "url": "https://clinica-reabilitacao-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "clinica-saude-api",
+    "titulo": "Clinica Saude",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://clinica-saude-api-19vm.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "clinica-veterinaria-api",
@@ -1344,6 +1400,20 @@
     ],
     "url": "https://ecommerce-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "ecommerce-spring-api",
+    "titulo": "Ecommerce Spring",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://ecommerce-spring-api.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "educacao-online-api",
@@ -2788,6 +2858,32 @@
     "tipo": "backend"
   },
   {
+    "nome": "petshop-node-api",
+    "titulo": "Petshop Node",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://petshop-node-api.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "petshop-pro-fastapi",
+    "titulo": "Petshop Pro",
+    "descricao": "API REST construída com FastAPI + SQLAlchemy + PostgreSQL.",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://petshop-pro-fastapi.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "plano-saude-api",
     "titulo": "Plano Saude",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -3338,6 +3434,20 @@
     "tipo": "frontend"
   },
   {
+    "nome": "Spring",
+    "titulo": "Spring",
+    "descricao": "",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://Spring.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "telemedicina-api",
     "titulo": "Telemedicina",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -3388,6 +3498,34 @@
     ],
     "url": "https://terapia-api-frontend.onrender.com",
     "tipo": "frontend"
+  },
+  {
+    "nome": "teste-regen-api",
+    "titulo": "Teste Regen",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://teste-regen-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "teste-regen-fastapi",
+    "titulo": "Teste Regen",
+    "descricao": "API REST construída com FastAPI + SQLAlchemy + PostgreSQL.",
+    "tecnologias": [
+      "FastAPI",
+      "Python 3.12",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Pydantic"
+    ],
+    "url": "https://teste-regen-fastapi.onrender.com",
+    "tipo": "backend"
   },
   {
     "nome": "transporte-api",
