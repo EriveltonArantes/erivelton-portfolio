@@ -41,7 +41,38 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   background: radial-gradient(circle, rgba(255,95,162,.4), transparent 70%);
   animation: orbFloat3 16s ease-in-out infinite;
 }
-.hero > *:not(.light-orb):not(.hero-bg-icon) { position: relative; z-index: 1; }
+.hero > *:not(.light-orb):not(.hero-bg-icon):not(.hero-zigzag):not(.hero-avatar) { position: relative; z-index: 1; }
+/* Variante B do hero (2026-07-06, só quando __HERO_VARIANT_B__ é true no
+   build) — riscos em zigue-zague com cor girando tipo RGB + avatar de um
+   dev numa mesa com o monitor brilhando, pra um 2º site ter cara diferente
+   do 1º (esferas de luz). CSS/SVG puro, zero imagem externa. */
+.hero--cyber { background: linear-gradient(180deg, #05060a 0%, #0b0e1a 100%); }
+.hero--cyber h1 {
+  background: linear-gradient(120deg, #ff6ad5 0%, #4da6ff 45%, #7bffb0 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-zigzag { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+.streak {
+  position: absolute; height: 5px; width: 140%; left: -20%;
+  background: linear-gradient(90deg, #ff2fd3, #4dd0ff, #7bff6a, #ffd23f, #ff2fd3);
+  background-size: 300% 100%; box-shadow: 0 0 18px 2px rgba(160,140,255,.35);
+  opacity: .8; mix-blend-mode: screen;
+  animation: streakHue 6s linear infinite, streakSlide 10s ease-in-out infinite;
+}
+.streak-1 { top: 10%; transform: rotate(-14deg); }
+.streak-2 { top: 26%; transform: rotate(12deg); animation-delay: .6s, 1s; }
+.streak-3 { top: 44%; transform: rotate(-10deg); animation-delay: 1.2s, 2s; }
+.streak-4 { top: 62%; transform: rotate(13deg); animation-delay: 1.8s, 3s; }
+.streak-5 { top: 80%; transform: rotate(-12deg); animation-delay: 2.4s, 4s; }
+@keyframes streakHue { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+@keyframes streakSlide { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+.hero-avatar {
+  position: absolute; right: 4%; bottom: -10px; width: 240px; height: auto; z-index: 0;
+  opacity: .95; animation: avatarBob 5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,.5));
+}
+@keyframes avatarBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@media (max-width: 768px) { .hero-avatar { width: 160px; opacity: .6; } }
 .hero-bg-icon {
   position: absolute; right: -30px; bottom: -70px; font-size: 380px; line-height: 1;
   font-family: 'Space Grotesk', monospace; font-weight: 700;

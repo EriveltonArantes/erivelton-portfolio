@@ -62,11 +62,39 @@ function Carousel({ slides, children }) {
 export default function App() {
   return (
     <div>
-      <section className="hero">
-        <div className="light-orb light-orb-1"></div>
-        <div className="light-orb light-orb-2"></div>
-        <div className="light-orb light-orb-3"></div>
-        <div className="hero-bg-icon" aria-hidden="true">{'</>'}</div>
+      <section className={"hero" + (__HERO_VARIANT_B__ ? " hero--cyber" : "")}>
+        {__HERO_VARIANT_B__ ? (
+          <>
+            <div className="hero-zigzag" aria-hidden="true">
+              <span className="streak streak-1"></span>
+              <span className="streak streak-2"></span>
+              <span className="streak streak-3"></span>
+              <span className="streak streak-4"></span>
+              <span className="streak streak-5"></span>
+            </div>
+            <svg className="hero-avatar" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="30" y="168" width="180" height="9" rx="4" fill="#1c2135" />
+              <rect x="66" y="94" width="108" height="68" rx="7" fill="#11162a" stroke="#3a4a7a" strokeWidth="2" />
+              <rect x="75" y="103" width="90" height="50" rx="3" fill="#0a0f1f">
+                <animate attributeName="fill" values="#0a0f1f;#182a55;#0a0f1f" dur="3s" repeatCount="indefinite" />
+              </rect>
+              <rect x="84" y="112" width="42" height="4" rx="2" fill="#4da6ff" opacity=".85" />
+              <rect x="84" y="122" width="62" height="4" rx="2" fill="#7bffb0" opacity=".75" />
+              <rect x="84" y="132" width="32" height="4" rx="2" fill="#ff6ad5" opacity=".75" />
+              <rect x="112" y="162" width="16" height="10" fill="#232a4a" />
+              <path d="M96 152 q28 -26 56 0 l0 16 -56 0 z" fill="#3a4a7a" />
+              <circle cx="124" cy="58" r="23" fill="#2a3560" />
+              <path d="M101 55 q23 -20 46 0 q-2 16 -23 20 q-21 -4 -23 -20 z" fill="#111634" />
+            </svg>
+          </>
+        ) : (
+          <>
+            <div className="light-orb light-orb-1"></div>
+            <div className="light-orb light-orb-2"></div>
+            <div className="light-orb light-orb-3"></div>
+            <div className="hero-bg-icon" aria-hidden="true">{'</>'}</div>
+          </>
+        )}
         <h1>Java Backend Developer | Experiência sólida em sistemas seguros e escaláveis</h1>
         <p>Desenvolvedor com 13 anos no varejo e experiência técnica em Spring Boot, REST APIs, JWT, JPA/Hibernate, PostgreSQL e Docker</p>
       </section>
