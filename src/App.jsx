@@ -63,6 +63,10 @@ export default function App() {
   return (
     <div>
       <section className="hero">
+        <div className="light-orb light-orb-1"></div>
+        <div className="light-orb light-orb-2"></div>
+        <div className="light-orb light-orb-3"></div>
+        <div className="hero-bg-icon" aria-hidden="true">{'</>'}</div>
         <h1>Java Backend Developer | Experiência sólida em sistemas seguros e escaláveis</h1>
         <p>Desenvolvedor com 13 anos no varejo e experiência técnica em Spring Boot, REST APIs, JWT, JPA/Hibernate, PostgreSQL e Docker</p>
       </section>
@@ -87,10 +91,12 @@ export default function App() {
       </div>
       <div className="container">
         <h2>Destaques</h2>
-        <div className="grid">
-        <div className="card"><h3>Car Rental Management System</h3><p>Backend completo de plataforma de locacao de veiculos, modelagem de regras de negocio pra veiculos/clientes/locacoes/devolucoes, autenticacao JWT e controle de acesso por perfis com Spring Security</p></div>
-        <div className="card"><h3>Sistema de Gestao para Academia</h3><p>Cadastro de alunos com upload de foto, controle de planos/assinaturas/pagamentos, APIs seguras Java+Spring Boot, MySQL, dashboard administrativo</p></div>
-        <div className="card"><h3>13 anos no Favorito Supermercados</h3><p>Negociacao com fornecedores, controle de estoque, ERP, lideranca de equipes multidisciplinares</p></div>
+        <p className="destaques-sub">4 sistemas completos: backend Java + Spring Boot, frontend React, autenticação e deploy real — clique e navegue ao vivo.</p>
+        <div className="grid destaques-grid">
+          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src="/screenshots/https-escola-vitrine-escola-api-frontend-onrender-com.png" alt="Escola" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Escola</h3><p>Matrícula, notas, boletim automático, financeiro com cobrança e portal da família — nível empresarial.</p><a className="proj-link" href="https://escola-vitrine-escola-api-frontend.onrender.com" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
+          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src="/screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png" alt="Marketplace" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Marketplace</h3><p>Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.</p><a className="proj-link" href="https://feira-livre-marketplace-api-frontend.onrender.com" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
+          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src="/screenshots/https-fisioterapia-clinica-api-frontend-onrender-com.png" alt="Clínica" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Clínica</h3><p>Pacientes, agendamento sem conflito, prontuário com timeline e convênio — auth JWT + RBAC + auditoria.</p><a className="proj-link" href="https://fisioterapia-clinica-api-frontend.onrender.com" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
+          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src="/screenshots/https-rede-barbearias-api-frontend-onrender-com.png" alt="Barbearia" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Barbearia</h3><p>Multi-unidade: agenda visual por barbeiro, comissão automática e dashboard de faturamento.</p><a className="proj-link" href="https://rede-barbearias-api-frontend.onrender.com" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
         </div>
       </div>
       <a className="whatsapp-fab" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">💬</a>
