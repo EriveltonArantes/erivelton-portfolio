@@ -59,8 +59,6 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 .container h2 { font-size: 1.6rem; margin-bottom: 24px; }
 .container > p { color: #c2c8de; line-height: 1.7; font-size: 1.05rem; }
 .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.destaques-sub { color: #aab4d4; margin: -14px 0 26px; font-size: .95rem; max-width: 640px; }
-.destaques-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
 .card {
   background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
   padding: 22px; border-radius: 14px; animation: floatUp .5s ease both;
@@ -129,3 +127,5 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   background: rgba(255,255,255,.2); cursor: pointer; transition: background .2s ease, transform .2s ease;
 }
 .carousel-dot.active { background: #8fb3ff; transform: scale(1.25); }
+.destaques-sub { color: #aab4d4; margin: -14px 0 26px; font-size: .95rem; max-width: 640px; }
+.destaques-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
