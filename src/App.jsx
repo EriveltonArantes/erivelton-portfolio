@@ -127,7 +127,7 @@ export default function App() {
           <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-rede-barbearias-api-frontend-onrender-com.png`} alt="Barbearia" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Barbearia</h3><p>Multi-unidade: agenda visual por barbeiro, comissão automática e dashboard de faturamento.</p><a className="proj-link" href="https://rede-barbearias-api-frontend.onrender.com" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
         </div>
       </div>
-      <a className="whatsapp-fab" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">💬</a>
+      <a className="whatsapp-fab" href="https://wa.me/5534996915734" target="_blank" rel="noreferrer">💬</a>
     </div>
   );
 }
