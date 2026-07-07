@@ -542,6 +542,20 @@
     "tipo": "backend"
   },
   {
+    "nome": "banco-vitrine-banco-api",
+    "titulo": "Banco Vitrine Banco",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://banco-vitrine-banco-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
     "nome": "barbearia-api",
     "titulo": "Barbearia",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -605,6 +619,32 @@
       "JavaScript"
     ],
     "url": "https://barbearia-oficial-barbearia-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "barbearia-vitrine-barbearia-api",
+    "titulo": "Barbearia Vitrine Barbearia",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://barbearia-vitrine-barbearia-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "barbearia-vitrine-barbearia-api-frontend",
+    "titulo": "Barbearia Vitrine Barbearia",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://barbearia-vitrine-barbearia-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
@@ -1948,6 +1988,18 @@
     "tipo": "backend"
   },
   {
+    "nome": "escola-vitrine-escola-api-frontend",
+    "titulo": "Escola Vitrine Escola",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://escola-vitrine-escola-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
     "nome": "estacionamento-api",
     "titulo": "Estacionamento",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -2639,6 +2691,32 @@
       "JavaScript"
     ],
     "url": "https://hotel-oficial-hotel-api-frontend.onrender.com",
+    "tipo": "frontend"
+  },
+  {
+    "nome": "hotel-vitrine-hotel-api",
+    "titulo": "Hotel Vitrine Hotel",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://hotel-vitrine-hotel-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "hotel-vitrine-hotel-api-frontend",
+    "titulo": "Hotel Vitrine Hotel",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://hotel-vitrine-hotel-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
