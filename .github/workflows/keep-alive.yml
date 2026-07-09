@@ -1,0 +1,23 @@
+name: Keep-alive dos projetos em destaque
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping backends (evita cold start do Render free)
+        run: |
+          urls=(
+            "https://banco-vitrine-banco-api.onrender.com"
+            "https://feira-livre-marketplace-api.onrender.com"
+            "https://hotel-vitrine-hotel-api.onrender.com"
+            "https://restaurante-oficial-restaurante-api.onrender.com"
+          )
+          for url in "${urls[@]}"; do
+            echo "Ping: $url"
+            curl -s -o /dev/null -w "  -> HTTP %{http_code} em %{time_total}s\n" "$url" || echo "  -> falhou"
+          done
