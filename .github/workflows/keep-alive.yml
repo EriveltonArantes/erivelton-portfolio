@@ -1,4 +1,4 @@
-name: Keep-alive dos projetos em destaque
+name: Keep-alive dos projetos do portfólio
 
 on:
   schedule:
@@ -16,6 +16,12 @@ jobs:
             "https://feira-livre-marketplace-api.onrender.com"
             "https://hotel-vitrine-hotel-api.onrender.com"
             "https://restaurante-oficial-restaurante-api.onrender.com"
+            "https://escola-vitrine-escola-api.onrender.com"
+            "https://clinica-api-api.onrender.com"
+            "https://rede-barbearias-api.onrender.com"
+            "https://amigo-fiel-petshop-api.onrender.com"
+            "https://academia-teste-pro-academia-api.onrender.com"
+            "https://oficina-mecanica-api.onrender.com"
           )
           for url in "${urls[@]}"; do
             echo "Ping: $url"
