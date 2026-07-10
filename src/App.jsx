@@ -46,11 +46,11 @@ function Carousel({ slides, children }) {
       </div>
       {total > 1 && (
         <>
-          <button className="carousel-arrow carousel-prev" onClick={() => irPara(index - 1)} aria-label="Anterior">‹</button>
-          <button className="carousel-arrow carousel-next" onClick={() => irPara(index + 1)} aria-label="Próximo">›</button>
+          <button className="carousel-arrow carousel-prev" onClick={() => irPara(index - 1)} aria-label="Previous">‹</button>
+          <button className="carousel-arrow carousel-next" onClick={() => irPara(index + 1)} aria-label="Next">›</button>
           <div className="carousel-dots">
             {Array.from({ length: total }).map((_, i) => (
-              <button key={i} className={`carousel-dot ${i === index ? 'active' : ''}`} onClick={() => irPara(i)} aria-label={`Ir pro slide ${i + 1}`} />
+              <button key={i} className={`carousel-dot ${i === index ? 'active' : ''}`} onClick={() => irPara(i)} aria-label={`Go to slide ${i + 1}`} />
             ))}
           </div>
         </>
@@ -67,13 +67,140 @@ const CONTATO = {
 };
 
 const STACK = [
-  { grupo: 'Back-end', itens: ['Java', 'Spring Boot', 'REST APIs', 'JWT', 'JPA / Hibernate'] },
-  { grupo: 'Dados & Infra', itens: ['PostgreSQL', 'Docker', 'Git', 'Swagger'] },
-  { grupo: 'Front-end', itens: ['React', 'Angular', 'JavaScript', 'Vite'] },
-  { grupo: 'Arquitetura', itens: ['Clean Architecture', 'SOLID', 'RBAC', 'Auditoria de dados'] },
+  { id: 'backend', itens: ['Java', 'Spring Boot', 'REST APIs', 'JWT', 'JPA / Hibernate'] },
+  { id: 'dados', itens: ['PostgreSQL', 'Docker', 'Git', 'Swagger'] },
+  { id: 'frontend', itens: ['React', 'Angular', 'JavaScript', 'Vite'] },
+  { id: 'arquitetura', itens: ['Clean Architecture', 'SOLID', 'RBAC', 'Auditoria de dados'] },
 ];
 
-function Navbar() {
+// Cada projeto do carrossel "Projetos entregues" — nome/descrição em pt/en,
+// screenshot e URL (Vercel, zero cold start) compartilhados entre os dois idiomas.
+const PROJETOS = [
+  { id: 'escola', screenshot: 'screenshots/https-escola-vitrine-escola-api-frontend-onrender-com.png', url: 'https://escola-vitrine-escola-api-frontend.vercel.app',
+    nome: { pt: 'Escola', en: 'School' },
+    desc: { pt: 'Matrícula, notas, boletim automático, financeiro com cobrança e portal da família — nível empresarial.', en: 'Enrollment, grades, automatic report cards, billing and a family portal — enterprise-grade.' } },
+  { id: 'marketplace', screenshot: 'screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png', url: 'https://feira-livre-marketplace-api-fronten.vercel.app',
+    nome: { pt: 'Marketplace', en: 'Marketplace' },
+    desc: { pt: 'Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.', en: 'Amazon/Shopee-level multi-vendor: stores, commission, cart, product variants and payment gateway.' } },
+  { id: 'clinica', screenshot: 'screenshots/https-clinica-api-api-frontend-onrender-com.png', url: 'https://clinica-api-api-frontend.vercel.app',
+    nome: { pt: 'Clínica', en: 'Clinic' },
+    desc: { pt: 'Pacientes, agendamento sem conflito, prontuário com timeline e convênio — auth JWT + RBAC + auditoria.', en: 'Patients, conflict-free scheduling, timeline medical records and insurance — JWT auth + RBAC + audit log.' } },
+  { id: 'barbearia', screenshot: 'screenshots/https-rede-barbearias-api-frontend-onrender-com.png', url: 'https://rede-barbearias-api-frontend.vercel.app',
+    nome: { pt: 'Barbearia', en: 'Barbershop' },
+    desc: { pt: 'Multi-unidade: agenda visual por barbeiro, comissão automática e dashboard de faturamento.', en: 'Multi-location: visual schedule per barber, automatic commission and revenue dashboard.' } },
+  { id: 'petshop', screenshot: 'screenshots/https-amigo-fiel-petshop-api-frontend-onrender-com.png', url: 'https://amigo-fiel-petshop-api-frontend.vercel.app',
+    nome: { pt: 'Petshop', en: 'Pet Shop' },
+    desc: { pt: 'Tutor com autoatendimento, agenda de banho e tosa, prontuário do pet e financeiro — RBAC completo.', en: 'Self-service owner portal, grooming schedule, pet medical record and finances — full RBAC.' } },
+  { id: 'academia', screenshot: 'screenshots/https-academia-teste-pro-academia-api-frontend-onrender-com.png', url: 'https://academia-teste-pro-academia-api-fro.vercel.app',
+    nome: { pt: 'Academia', en: 'Gym' },
+    desc: { pt: 'Matrícula, check-in de alunos, reserva de aula e controle de mensalidade em atraso.', en: 'Enrollment, member check-in, class booking and overdue payment tracking.' } },
+  { id: 'oficina', screenshot: 'screenshots/https-oficina-mecanica-api-frontend-onrender-com.png', url: 'https://oficina-mecanica-api-frontend.vercel.app',
+    nome: { pt: 'Oficina Mecânica', en: 'Auto Repair Shop' },
+    desc: { pt: 'Ordens de serviço, controle por mecânico, peças e comissão — backend Java + frontend React.', en: 'Work orders, per-mechanic tracking, parts and commission — Java backend + React frontend.' } },
+  { id: 'hotel', screenshot: 'screenshots/https-hotel-vitrine-hotel-api-frontend-onrender-com.png', url: 'https://hotel-vitrine-hotel-api-frontend.vercel.app',
+    nome: { pt: 'Rede de Hotéis', en: 'Hotel Chain' },
+    desc: { pt: 'Multi-propriedade, mapa de quartos por unidade/andar, portal do hóspede e financeiro com ocupação.', en: 'Multi-property, room map by unit/floor, guest portal and occupancy-based finances.' } },
+  { id: 'restaurante', screenshot: 'screenshots/https-restaurante-oficial-restaurante-api-frontend-onrender-com.png', url: 'https://restaurante-oficial-restaurante-api.vercel.app',
+    nome: { pt: 'Restaurante', en: 'Restaurant' },
+    desc: { pt: 'Mapa de mesas, pedidos por status até a cozinha, cardápio e comissão de garçom.', en: 'Table map, order status tracking to the kitchen, menu and waiter commission.' } },
+  { id: 'banco', screenshot: 'screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png', url: 'https://banco-vitrine-banco-api-frontend.vercel.app',
+    nome: { pt: 'Banco Digital', en: 'Digital Bank' },
+    desc: { pt: 'Ledger de partida dobrada, PIX/TED, limite diário e bloqueio automático de fraude — nível fintech.', en: 'Double-entry ledger, PIX/wire transfer, daily limit and automatic fraud blocking — fintech-grade.' } },
+];
+
+// Os 4 mais fortes ganham vitrine própria em "Destaques", com uma descrição
+// mais profunda (não é o mesmo texto do carrossel) — reaproveita screenshot/url.
+const DESTAQUES_IDS = ['banco', 'hotel', 'restaurante', 'marketplace'];
+const DESTAQUES_DESC = {
+  banco: { pt: 'Ledger de partida dobrada de verdade — toda transferência debita e credita atomicamente, com limite diário e bloqueio automático de fraude.', en: 'A real double-entry ledger — every transfer debits and credits atomically, with daily limit and automatic fraud blocking.' },
+  hotel: { pt: 'Multi-propriedade nível grande rede: mapa de quartos por unidade/andar, reserva sem sobreposição de datas e portal do hóspede.', en: 'Big-chain-level multi-property: room map by unit/floor, no-overlap date booking and guest portal.' },
+  restaurante: { pt: 'Mesa ocupa/libera sozinha com o pedido, item bloqueado quando sai do cardápio, comissão de garçom calculada pelo servidor.', en: "Table occupies/frees itself with the order, item locked when it's off the menu, waiter commission calculated server-side." },
+  marketplace: { pt: 'Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.', en: 'Amazon/Shopee-level multi-vendor: stores, commission, cart, product variants and payment gateway.' },
+};
+const DESTAQUES = DESTAQUES_IDS.map(id => {
+  const p = PROJETOS.find(x => x.id === id);
+  return { ...p, desc: DESTAQUES_DESC[id] };
+});
+
+const T = {
+  pt: {
+    nav: { sobre: 'Sobre', projetos: 'Projetos', stack: 'Stack', contato: 'Contato' },
+    heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
+    heroSub: '13 anos gerindo operação real, quase 3 construindo sistemas completos em produção: back-end em Spring Boot com JWT, JPA/Hibernate e PostgreSQL, front-end em React e Angular.',
+    aboutKicker: 'Minha trajetória',
+    aboutTitulo: '13 anos de operação real. Quase 3 construindo o software que sustenta ela.',
+    aboutParagrafos: [
+      'Passei 13 anos dentro de um supermercado — os últimos 8 como gerente, respondendo por equipe, estoque, prazo e resultado todo santo dia. Aprendi na prática o que quebra uma operação: processo mal desenhado, informação que não chega a tempo, gente sem ferramenta pra trabalhar direito.',
+      'Há quase 3 anos, resolvi construir essas ferramentas com as próprias mãos. Mergulhei em Java, Spring Boot, APIs REST, JWT, JPA/Hibernate, PostgreSQL e Docker no back-end, e React e Angular no front — não em curso avulso, mas construindo sistemas completos, do banco de dados até a tela, pensados pra rodar em produção de verdade.',
+      'Isso muda o tipo de desenvolvedor que sou: não escrevo pensando só em passar no teste — penso em quem vai usar aquilo numa segunda-feira de manhã com a loja lotada. É a mesma exigência que 13 anos de gestão ensinam, agora aplicada à arquitetura de software.',
+    ],
+    stats: [
+      { num: '13', label: 'anos de operação e gestão real' },
+      { num: '8', label: 'anos liderando equipe e resultado' },
+      { num: '~3', label: 'anos construindo software em produção' },
+      { num: '10+', label: 'sistemas completos no ar' },
+    ],
+    projetosTitulo: 'Projetos entregues',
+    destaquesTitulo: 'Destaques',
+    destaquesSub: '4 sistemas completos: backend Java + Spring Boot, frontend React, autenticação e deploy real — clique e navegue ao vivo.',
+    stackTitulo: 'Stack',
+    stackSub: 'O que uso pra tirar um sistema do zero e colocar em produção — sozinho, do banco de dados até a interface.',
+    stackGrupos: { backend: 'Back-end', dados: 'Dados & Infra', frontend: 'Front-end', arquitetura: 'Arquitetura' },
+    footerTitulo: 'Vamos conversar',
+    footerSub: 'Aberto a oportunidades de desenvolvimento full stack Java/React. Resposta rápida por WhatsApp.',
+    footerCopy: 'desenvolvido com React',
+    noAr: 'No ar',
+    verSistema: 'Ver sistema no ar →',
+    abrirMenu: 'Abrir menu',
+  },
+  en: {
+    nav: { sobre: 'About', projetos: 'Projects', stack: 'Stack', contato: 'Contact' },
+    heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
+    heroSub: '13 years managing real-world operations, almost 3 building complete systems in production: back-end in Spring Boot with JWT, JPA/Hibernate and PostgreSQL, front-end in React and Angular.',
+    aboutKicker: 'My journey',
+    aboutTitulo: '13 years of real operations. Almost 3 building the software that runs it.',
+    aboutParagrafos: [
+      "I spent 13 years inside a supermarket — the last 8 as a manager, accountable for staff, inventory, deadlines and results every single day. I learned firsthand what breaks an operation: badly designed processes, information that doesn't arrive on time, people without the right tools to do their job.",
+      'Almost 3 years ago, I decided to build those tools with my own hands. I dove into Java, Spring Boot, REST APIs, JWT, JPA/Hibernate, PostgreSQL and Docker on the back-end, and React and Angular on the front — not a quick course, but building complete systems, from the database to the screen, designed to run in real production.',
+      "That changes the kind of developer I am: I don't write code just to pass a test — I think about who's going to use it on a Monday morning with the store packed. It's the same standard 13 years of management teaches, now applied to software architecture.",
+    ],
+    stats: [
+      { num: '13', label: 'years of real operations & management' },
+      { num: '8', label: 'years leading teams and results' },
+      { num: '~3', label: 'years building production software' },
+      { num: '10+', label: 'complete systems live' },
+    ],
+    projetosTitulo: 'Delivered projects',
+    destaquesTitulo: 'Highlights',
+    destaquesSub: '4 complete systems: Java + Spring Boot backend, React frontend, real auth and deploy — click and navigate live.',
+    stackTitulo: 'Stack',
+    stackSub: 'What I use to take a system from zero to production — solo, from the database to the interface.',
+    stackGrupos: { backend: 'Back-end', dados: 'Data & Infra', frontend: 'Front-end', arquitetura: 'Architecture' },
+    footerTitulo: "Let's talk",
+    footerSub: 'Open to full stack Java/React development opportunities. Quick reply on WhatsApp.',
+    footerCopy: 'built with React',
+    noAr: 'Live',
+    verSistema: 'View live system →',
+    abrirMenu: 'Open menu',
+  },
+};
+
+function ProjectCard({ p, t, lang }) {
+  return (
+    <TiltCard>
+      <div className="browser-frame">
+        <div className="bar"><span></span><span></span><span></span></div>
+        <img src={`${import.meta.env.BASE_URL}${p.screenshot}`} alt={p.nome[lang]} loading="lazy" />
+      </div>
+      <span className="proj-badge"><span className="dot"></span>{t.noAr}</span>
+      <h3>{p.nome[lang]}</h3>
+      <p>{p.desc[lang]}</p>
+      <a className="proj-link" href={p.url} target="_blank" rel="noreferrer">{t.verSistema}</a>
+    </TiltCard>
+  );
+}
+
+function Navbar({ lang, setLang, t }) {
   const [aberto, setAberto] = React.useState(false);
   const fechar = () => setAberto(false);
   return (
@@ -81,16 +208,23 @@ function Navbar() {
       <div className="navbar-inner">
         <a href="#topo" className="navbar-logo" onClick={fechar}>Erivelton Arantes</a>
         <nav className={`navbar-links ${aberto ? 'is-open' : ''}`}>
-          <a href="#sobre" onClick={fechar}>Sobre</a>
-          <a href="#projetos" onClick={fechar}>Projetos</a>
-          <a href="#stack" onClick={fechar}>Stack</a>
-          <a href="#contato" onClick={fechar}>Contato</a>
+          <a href="#sobre" onClick={fechar}>{t.nav.sobre}</a>
+          <a href="#projetos" onClick={fechar}>{t.nav.projetos}</a>
+          <a href="#stack" onClick={fechar}>{t.nav.stack}</a>
+          <a href="#contato" onClick={fechar}>{t.nav.contato}</a>
+          <button
+            className="lang-toggle"
+            onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
+            aria-label="Switch language"
+          >
+            {lang === 'pt' ? '🇧🇷 PT' : '🇺🇸 EN'}
+          </button>
           <div className="navbar-icons">
             <a href={CONTATO.github} target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
             <a href={CONTATO.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
           </div>
         </nav>
-        <button className="navbar-toggle" onClick={() => setAberto(a => !a)} aria-label="Abrir menu">
+        <button className="navbar-toggle" onClick={() => setAberto(a => !a)} aria-label={t.abrirMenu}>
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -98,13 +232,13 @@ function Navbar() {
   );
 }
 
-function Footer() {
+function Footer({ t }) {
   return (
     <footer id="contato" className="footer">
       <div className="container footer-inner">
         <div>
-          <h2>Vamos conversar</h2>
-          <p className="destaques-sub">Aberto a oportunidades de desenvolvimento full stack Java/React. Resposta rápida por WhatsApp.</p>
+          <h2>{t.footerTitulo}</h2>
+          <p className="destaques-sub">{t.footerSub}</p>
         </div>
         <div className="footer-links">
           <a href={CONTATO.whatsapp} target="_blank" rel="noreferrer" className="footer-link">💬 WhatsApp — {CONTATO.telefone}</a>
@@ -112,15 +246,18 @@ function Footer() {
           <a href={CONTATO.linkedin} target="_blank" rel="noreferrer" className="footer-link">LinkedIn — Erivelton Arantes de Souza</a>
         </div>
       </div>
-      <p className="footer-copy">© {new Date().getFullYear()} Erivelton Arantes — desenvolvido com React.</p>
+      <p className="footer-copy">© {new Date().getFullYear()} Erivelton Arantes — {t.footerCopy}.</p>
     </footer>
   );
 }
 
 export default function App() {
+  const [lang, setLang] = React.useState('pt');
+  const t = T[lang];
+
   return (
     <div>
-      <Navbar />
+      <Navbar lang={lang} setLang={setLang} t={t} />
       <section id="topo" className={"hero" + (__HERO_VARIANT_B__ ? " hero--cyber" : "")}>
         {__HERO_VARIANT_B__ ? (
           <>
@@ -154,58 +291,45 @@ export default function App() {
             <div className="hero-bg-icon" aria-hidden="true">{'</>'}</div>
           </>
         )}
-        <h1>Full Stack Developer — Java/Spring Boot &amp; React/Angular</h1>
-        <p>13 anos gerindo operação real, quase 3 construindo sistemas completos em produção: back-end em Spring Boot com JWT, JPA/Hibernate e PostgreSQL, front-end em React e Angular.</p>
+        <h1>{t.heroTitulo}</h1>
+        <p>{t.heroSub}</p>
       </section>
       <div id="sobre" className="container about-container">
-        <span className="about-kicker">Minha trajetória</span>
-        <h2 className="about-title">13 anos de operação real. Quase 3 construindo o software que sustenta ela.</h2>
+        <span className="about-kicker">{t.aboutKicker}</span>
+        <h2 className="about-title">{t.aboutTitulo}</h2>
         <div className="about-grid">
           <div className="about-text">
-            <p>Passei 13 anos dentro de um supermercado — os últimos 8 como gerente, respondendo por equipe, estoque, prazo e resultado todo santo dia. Aprendi na prática o que quebra uma operação: processo mal desenhado, informação que não chega a tempo, gente sem ferramenta pra trabalhar direito.</p>
-            <p>Há quase 3 anos, resolvi construir essas ferramentas com as próprias mãos. Mergulhei em Java, Spring Boot, APIs REST, JWT, JPA/Hibernate, PostgreSQL e Docker no back-end, e React e Angular no front — não em curso avulso, mas construindo sistemas completos, do banco de dados até a tela, pensados pra rodar em produção de verdade.</p>
-            <p>Isso muda o tipo de desenvolvedor que sou: não escrevo pensando só em passar no teste — penso em quem vai usar aquilo numa segunda-feira de manhã com a loja lotada. É a mesma exigência que 13 anos de gestão ensinam, agora aplicada à arquitetura de software.</p>
+            {t.aboutParagrafos.map((p, i) => <p key={i}>{p}</p>)}
           </div>
           <div className="about-stats">
-            <div className="stat-card"><span className="stat-num">13</span><span className="stat-label">anos de operação e gestão real</span></div>
-            <div className="stat-card"><span className="stat-num">8</span><span className="stat-label">anos liderando equipe e resultado</span></div>
-            <div className="stat-card"><span className="stat-num">~3</span><span className="stat-label">anos construindo software em produção</span></div>
-            <div className="stat-card"><span className="stat-num">10+</span><span className="stat-label">sistemas completos no ar</span></div>
+            {t.stats.map(s => (
+              <div className="stat-card" key={s.label}><span className="stat-num">{s.num}</span><span className="stat-label">{s.label}</span></div>
+            ))}
           </div>
         </div>
       </div>
       <div id="projetos" className="container">
-        <h2>Projetos entregues</h2>
-        <Carousel slides={10}>
-          <div className="carousel-slide" key="0"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-escola-vitrine-escola-api-frontend-onrender-com.png`} alt="Escola" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Escola</h3><p>Matrícula, notas, boletim automático, financeiro com cobrança e portal da família — nível empresarial.</p><a className="proj-link" href="https://escola-vitrine-escola-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="1"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png`} alt="Marketplace" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Marketplace</h3><p>Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.</p><a className="proj-link" href="https://feira-livre-marketplace-api-fronten.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="2"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-clinica-api-api-frontend-onrender-com.png`} alt="Clínica" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Clínica</h3><p>Pacientes, agendamento sem conflito, prontuário com timeline e convênio — auth JWT + RBAC + auditoria.</p><a className="proj-link" href="https://clinica-api-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="3"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-rede-barbearias-api-frontend-onrender-com.png`} alt="Barbearia" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Barbearia</h3><p>Multi-unidade: agenda visual por barbeiro, comissão automática e dashboard de faturamento.</p><a className="proj-link" href="https://rede-barbearias-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="4"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-amigo-fiel-petshop-api-frontend-onrender-com.png`} alt="Petshop" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Petshop</h3><p>Tutor com autoatendimento, agenda de banho e tosa, prontuário do pet e financeiro — RBAC completo.</p><a className="proj-link" href="https://amigo-fiel-petshop-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="5"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-academia-teste-pro-academia-api-frontend-onrender-com.png`} alt="Academia" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Academia</h3><p>Matrícula, check-in de alunos, reserva de aula e controle de mensalidade em atraso.</p><a className="proj-link" href="https://academia-teste-pro-academia-api-fro.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="6"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-oficina-mecanica-api-frontend-onrender-com.png`} alt="Oficina Mecânica" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Oficina Mecânica</h3><p>Ordens de serviço, controle por mecânico, peças e comissão — backend Java + frontend React.</p><a className="proj-link" href="https://oficina-mecanica-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="7"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-hotel-vitrine-hotel-api-frontend-onrender-com.png`} alt="Hotel" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Rede de Hotéis</h3><p>Multi-propriedade, mapa de quartos por unidade/andar, portal do hóspede e financeiro com ocupação.</p><a className="proj-link" href="https://hotel-vitrine-hotel-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="8"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-restaurante-oficial-restaurante-api-frontend-onrender-com.png`} alt="Restaurante" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Restaurante</h3><p>Mapa de mesas, pedidos por status até a cozinha, cardápio e comissão de garçom.</p><a className="proj-link" href="https://restaurante-oficial-restaurante-api.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
-          <div className="carousel-slide" key="9"><TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png`} alt="Banco Digital" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Banco Digital</h3><p>Ledger de partida dobrada, PIX/TED, limite diário e bloqueio automático de fraude — nível fintech.</p><a className="proj-link" href="https://banco-vitrine-banco-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard></div>
+        <h2>{t.projetosTitulo}</h2>
+        <Carousel slides={PROJETOS.length}>
+          {PROJETOS.map(p => (
+            <div className="carousel-slide" key={p.id}><ProjectCard p={p} t={t} lang={lang} /></div>
+          ))}
         </Carousel>
       </div>
       <div className="container">
-        <h2>Destaques</h2>
-        <p className="destaques-sub">4 sistemas completos: backend Java + Spring Boot, frontend React, autenticação e deploy real — clique e navegue ao vivo.</p>
+        <h2>{t.destaquesTitulo}</h2>
+        <p className="destaques-sub">{t.destaquesSub}</p>
         <div className="grid destaques-grid">
-          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png`} alt="Banco Digital" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Banco Digital</h3><p>Ledger de partida dobrada de verdade — toda transferência debita e credita atomicamente, com limite diário e bloqueio automático de fraude.</p><a className="proj-link" href="https://banco-vitrine-banco-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
-          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-hotel-vitrine-hotel-api-frontend-onrender-com.png`} alt="Hotel" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Rede de Hotéis</h3><p>Multi-propriedade nível grande rede: mapa de quartos por unidade/andar, reserva sem sobreposição de datas e portal do hóspede.</p><a className="proj-link" href="https://hotel-vitrine-hotel-api-frontend.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
-          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-restaurante-oficial-restaurante-api-frontend-onrender-com.png`} alt="Restaurante" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Restaurante</h3><p>Mesa ocupa/libera sozinha com o pedido, item bloqueado quando sai do cardápio, comissão de garçom calculada pelo servidor.</p><a className="proj-link" href="https://restaurante-oficial-restaurante-api.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
-          <TiltCard><div className="browser-frame"><div className="bar"><span></span><span></span><span></span></div><img src={`${import.meta.env.BASE_URL}screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png`} alt="Marketplace" loading="lazy" /></div><span className="proj-badge"><span className="dot"></span>No ar</span><h3>Marketplace</h3><p>Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.</p><a className="proj-link" href="https://feira-livre-marketplace-api-fronten.vercel.app" target="_blank" rel="noreferrer">Ver sistema no ar →</a></TiltCard>
+          {DESTAQUES.map(p => <ProjectCard key={p.id} p={p} t={t} lang={lang} />)}
         </div>
       </div>
       <div id="stack" className="container">
-        <h2>Stack</h2>
-        <p className="destaques-sub">O que uso pra tirar um sistema do zero e colocar em produção — sozinho, do banco de dados até a interface.</p>
+        <h2>{t.stackTitulo}</h2>
+        <p className="destaques-sub">{t.stackSub}</p>
         <div className="stack-groups">
-          {STACK.map(({ grupo, itens }) => (
-            <div className="stack-group" key={grupo}>
-              <h3 className="stack-group-title">{grupo}</h3>
+          {STACK.map(({ id, itens }) => (
+            <div className="stack-group" key={id}>
+              <h3 className="stack-group-title">{t.stackGrupos[id]}</h3>
               <div className="stack-badges">
                 {itens.map(item => <span className="stack-badge" key={item}>{item}</span>)}
               </div>
@@ -213,7 +337,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer t={t} />
       <a className="whatsapp-fab" href={CONTATO.whatsapp} target="_blank" rel="noreferrer">💬</a>
     </div>
   );
