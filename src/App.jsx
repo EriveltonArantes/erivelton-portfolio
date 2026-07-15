@@ -106,6 +106,9 @@ const PROJETOS = [
   { id: 'banco', screenshot: 'screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png', url: 'https://banco-vitrine-banco-api-frontend.vercel.app',
     nome: { pt: 'Banco Digital', en: 'Digital Bank' },
     desc: { pt: 'Ledger de partida dobrada, PIX/TED, limite diário e bloqueio automático de fraude — nível fintech.', en: 'Double-entry ledger, PIX/wire transfer, daily limit and automatic fraud blocking — fintech-grade.' } },
+  { id: 'ead', screenshot: 'screenshots/https-ead-cursos-api-frontend-vercel-app.png', url: 'https://ead-cursos-api-frontend.vercel.app',
+    nome: { pt: 'EAD — Venda de Cursos', en: 'EAD — Online Courses' },
+    desc: { pt: 'Portal do aluno self-service: catálogo, compra, matrícula travada por pagamento, aula/quiz e certificado automático ao concluir.', en: 'Self-service student portal: catalog, purchase, payment-gated enrollment, lesson/quiz and automatic certificate on completion.' } },
 ];
 
 // Os 4 mais fortes ganham vitrine própria em "Destaques", com uma descrição
