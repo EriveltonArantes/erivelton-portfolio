@@ -3060,6 +3060,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "leilao-online-api",
+    "titulo": "Leilao Online",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://leilao-online-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "leilao-online-api-frontend",
+    "titulo": "Leilao Online",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://leilao-online-api-frontend.vercel.app",
+    "tipo": "frontend"
+  },
+  {
     "nome": "licitacao-api",
     "titulo": "Licitacao",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",

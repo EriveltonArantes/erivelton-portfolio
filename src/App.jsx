@@ -109,6 +109,9 @@ const PROJETOS = [
   { id: 'ead', screenshot: 'screenshots/https-ead-cursos-api-frontend-vercel-app.png', url: 'https://ead-cursos-api-frontend.vercel.app',
     nome: { pt: 'EAD — Venda de Cursos', en: 'EAD — Online Courses' },
     desc: { pt: 'Portal do aluno self-service: catálogo, compra, matrícula travada por pagamento, aula/quiz e certificado automático ao concluir.', en: 'Self-service student portal: catalog, purchase, payment-gated enrollment, lesson/quiz and automatic certificate on completion.' } },
+  { id: 'leilao', screenshot: 'screenshots/https-leilao-online-api-frontend-vercel-app.png', url: 'https://leilao-online-api-frontend.vercel.app',
+    nome: { pt: 'Leilão Online', en: 'Online Auction' },
+    desc: { pt: 'Lances em tempo real com anti-sniping (estende o prazo no último minuto), lance mínimo validado e encerramento automático que define o vencedor sozinho.', en: 'Real-time bidding with anti-sniping (auto-extends in the last minute), validated minimum bid and automatic closing that picks the winner on its own.' } },
 ];
 
 // Os 4 mais fortes ganham vitrine própria em "Destaques", com uma descrição

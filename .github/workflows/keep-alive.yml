@@ -23,6 +23,7 @@ jobs:
             "https://academia-teste-pro-academia-api.onrender.com"
             "https://oficina-mecanica-api.onrender.com"
             "https://ead-cursos-api.onrender.com"
+            "https://leilao-online-api.onrender.com"
           )
           for url in "${urls[@]}"; do
             echo "Ping: $url"
