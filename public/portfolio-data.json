@@ -1588,6 +1588,32 @@
     "tipo": "frontend"
   },
   {
+    "nome": "corretora-de-seguros-api",
+    "titulo": "Corretora De Seguros",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://corretora-de-seguros-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "corretora-de-seguros-api-frontend",
+    "titulo": "Corretora De Seguros",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://corretora-de-seguros-api-frontend.vercel.app",
+    "tipo": "frontend"
+  },
+  {
     "nome": "corretora-seguros-api",
     "titulo": "Corretora Seguros",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
@@ -3082,7 +3108,7 @@
       "Vite",
       "JavaScript"
     ],
-    "url": "https://leilao-online-api-frontend.vercel.app",
+    "url": "https://leilao-online-api-frontend.onrender.com",
     "tipo": "frontend"
   },
   {
