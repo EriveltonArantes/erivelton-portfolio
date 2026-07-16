@@ -3998,6 +3998,32 @@
     "tipo": "backend"
   },
   {
+    "nome": "rede-social-api",
+    "titulo": "Rede Social",
+    "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
+    "tecnologias": [
+      "Spring Boot 3",
+      "Java 21",
+      "PostgreSQL",
+      "JWT",
+      "Swagger"
+    ],
+    "url": "https://rede-social-api.onrender.com",
+    "tipo": "backend"
+  },
+  {
+    "nome": "rede-social-api-frontend",
+    "titulo": "Rede Social",
+    "descricao": "",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript"
+    ],
+    "url": "https://rede-social-api-frontend.vercel.app",
+    "tipo": "frontend"
+  },
+  {
     "nome": "registro-imoveis-api",
     "titulo": "Registro Imoveis",
     "descricao": "API REST Spring Boot gerada automaticamente por FabricaIA.",
