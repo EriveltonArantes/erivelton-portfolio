@@ -6,6 +6,5 @@ export default defineConfig({
   // da pasta local do projeto (erivelton-dev-portfolio) — legado; por isso
   // hardcoded aqui em vez de derivar do nome do projeto.
   base: process.env.GITHUB_ACTIONS ? '/erivelton-portfolio/' : '/',
-  define: { __HERO_VARIANT_B__: JSON.stringify(!!process.env.GITHUB_ACTIONS) },
   plugins: [react()],
 });

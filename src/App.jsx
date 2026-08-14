@@ -1,5 +1,148 @@
 import React from 'react';
 
+// IntersectionObserver simples: dispara uma vez quando o elemento entra na
+// tela e não desliga mais — usado tanto pro fade-in de seção (Reveal)
+// quanto pro contador animado das estatísticas (Counter).
+function useOnScreen(ref, rootMargin = '-60px') {
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setVisible(true); obs.unobserve(el); }
+    }, { rootMargin, threshold: 0.15 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [ref, rootMargin]);
+  return visible;
+}
+
+// Fade+slide-up genérico ao rolar até o elemento; `delay` (ms) permite
+// escalonar itens de uma grade pra entrarem em cascata em vez de juntos.
+function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
+  const ref = React.useRef(null);
+  const visible = useOnScreen(ref);
+  return (
+    <Tag ref={ref} className={`reveal ${visible ? 'is-visible' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+      {children}
+    </Tag>
+  );
+}
+
+// Números das estatísticas ("13", "8", "~3", "10+") contam de 0 até o
+// valor real quando entram na tela, em vez de aparecer estático.
+function Counter({ value }) {
+  const ref = React.useRef(null);
+  const visible = useOnScreen(ref, '-40px');
+  const match = value.match(/^(~?)(\d+)(\+?)$/);
+  const [display, setDisplay] = React.useState(match ? `${match[1]}0${match[3]}` : value);
+
+  React.useEffect(() => {
+    if (!visible || !match) return;
+    const [, prefix, numStr, suffix] = match;
+    const target = parseInt(numStr, 10);
+    const duration = 1100;
+    const start = performance.now();
+    let raf;
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setDisplay(`${prefix}${Math.round(eased * target)}${suffix}`);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible]);
+
+  return <span ref={ref}>{display}</span>;
+}
+
+// 16 partículas flutuando devagar atrás do hero — posição/duração
+// pseudo-aleatórias mas fixas (calculadas uma vez no load do módulo).
+const PARTICLES = Array.from({ length: 16 }, (_, i) => ({
+  left: (i * 37) % 100,
+  size: 2 + ((i * 13) % 4),
+  duration: 9 + ((i * 7) % 10),
+  delay: -((i * 3) % 12),
+}));
+
+// Ícones da stack orbitando em 3D em volta de um hub com brilho pulsante.
+// Cada item conta com uma animação de contra-rotação (orbitCounter) da
+// MESMA duração do giro do anel (orbitSpin), então mesmo girando junto
+// com o anel ele se cancela e o emoji fica sempre em pé — técnica clássica
+// de "satélites em órbita" só com CSS, sem lib 3D nenhuma.
+const ORBIT_ITENS = [
+  { emoji: '☕', label: 'Java' },
+  { emoji: '🍃', label: 'Spring' },
+  { emoji: '⚛️', label: 'React' },
+  { emoji: '🐘', label: 'SQL' },
+  { emoji: '🐳', label: 'Docker' },
+  { emoji: '🔐', label: 'JWT' },
+];
+
+// Órbita gira sozinha o tempo todo (animação CSS em .orbit-ring). Além
+// disso, .orbit-manual soma uma rotação extra que o usuário controla à
+// mão: mexendo o mouse por cima, o anel gira mais rápido/devagar ou muda
+// de direção — feito só com o deslocamento (delta) do cursor entre dois
+// mousemove, aplicado direto via ref (sem re-render a cada pixel).
+function OrbitScene() {
+  const stageRef = React.useRef(null);
+  const manualRef = React.useRef(null);
+  const lastX = React.useRef(null);
+  const manualDeg = React.useRef(0);
+
+  const onMove = (e) => {
+    const stage = stageRef.current;
+    if (stage) {
+      const r = stage.parentElement.getBoundingClientRect();
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      stage.style.setProperty('--tiltX', `${58 - y * 14}deg`);
+    }
+    if (lastX.current !== null && manualRef.current) {
+      const deltaX = e.clientX - lastX.current;
+      manualDeg.current += deltaX * 0.7;
+      manualRef.current.style.transform = `rotate(${manualDeg.current}deg)`;
+    }
+    lastX.current = e.clientX;
+  };
+  const onEnter = (e) => { lastX.current = e.clientX; };
+  const onLeave = () => {
+    lastX.current = null;
+    const stage = stageRef.current;
+    if (stage) stage.style.setProperty('--tiltX', '58deg');
+  };
+
+  return (
+    <div className="orbit-scene" onMouseMove={onMove} onMouseEnter={onEnter} onMouseLeave={onLeave} aria-hidden="true">
+      <div className="orbit-stage" ref={stageRef}>
+        <div className="orbit-hub"><span>{'</>'}</span></div>
+        <div className="orbit-manual" ref={manualRef}>
+          <div className="orbit-ring">
+            {ORBIT_ITENS.map((it, i) => (
+              <div className="orbit-item" key={it.label} style={{ '--angle': `${(360 / ORBIT_ITENS.length) * i}deg` }}>
+                <div
+                  className="orbit-item-counter"
+                  title={it.label}
+                  style={{ animationDelay: `0s, ${-(i * 1.6)}s` }}
+                >
+                  <span
+                    className="orbit-item-face"
+                    style={{
+                      animationDuration: `${6 + i * 0.8}s`,
+                      animationDirection: i % 2 ? 'reverse' : 'normal',
+                    }}
+                  >{it.emoji}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function TiltCard({ children }) {
   const ref = React.useRef(null);
 
@@ -133,6 +276,8 @@ const T = {
     nav: { sobre: 'Sobre', projetos: 'Projetos', stack: 'Stack', contato: 'Contato' },
     heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
     heroSub: '13 anos gerindo operação real, quase 3 construindo sistemas completos em produção: back-end em Spring Boot com JWT, JPA/Hibernate e PostgreSQL, front-end em React e Angular.',
+    heroCtaProjetos: 'Ver projetos',
+    heroCtaContato: '💬 Falar no WhatsApp',
     aboutKicker: 'Minha trajetória',
     aboutTitulo: '13 anos de operação real. Quase 3 construindo o software que sustenta ela.',
     aboutParagrafos: [
@@ -163,6 +308,8 @@ const T = {
     nav: { sobre: 'About', projetos: 'Projects', stack: 'Stack', contato: 'Contact' },
     heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
     heroSub: '13 years managing real-world operations, almost 3 building complete systems in production: back-end in Spring Boot with JWT, JPA/Hibernate and PostgreSQL, front-end in React and Angular.',
+    heroCtaProjetos: 'View projects',
+    heroCtaContato: '💬 Chat on WhatsApp',
     aboutKicker: 'My journey',
     aboutTitulo: '13 years of real operations. Almost 3 building the software that runs it.',
     aboutParagrafos: [
@@ -264,58 +411,50 @@ export default function App() {
   return (
     <div>
       <Navbar lang={lang} setLang={setLang} t={t} />
-      <section id="topo" className={"hero" + (__HERO_VARIANT_B__ ? " hero--cyber" : "")}>
-        {__HERO_VARIANT_B__ ? (
-          <>
-            <div className="hero-zigzag" aria-hidden="true">
-              <span className="streak streak-1"></span>
-              <span className="streak streak-2"></span>
-              <span className="streak streak-3"></span>
-              <span className="streak streak-4"></span>
-              <span className="streak streak-5"></span>
+      <section id="topo" className="hero">
+        <div className="light-orb light-orb-1"></div>
+        <div className="light-orb light-orb-2"></div>
+        <div className="light-orb light-orb-3"></div>
+        <div className="hero-aurora" aria-hidden="true"></div>
+        <div className="hero-particles" aria-hidden="true">
+          {PARTICLES.map((p, i) => (
+            <span key={i} className="particle" style={{
+              left: `${p.left}%`, width: p.size, height: p.size,
+              animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`,
+            }} />
+          ))}
+        </div>
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <h1>{t.heroTitulo}</h1>
+            <p>{t.heroSub}</p>
+            <div className="hero-cta-row">
+              <a className="hero-cta hero-cta-primary" href="#projetos">{t.heroCtaProjetos}</a>
+              <a className="hero-cta hero-cta-ghost" href={CONTATO.whatsapp} target="_blank" rel="noreferrer">{t.heroCtaContato}</a>
             </div>
-            <svg className="hero-avatar" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="30" y="168" width="180" height="9" rx="4" fill="#1c2135" />
-              <rect x="66" y="94" width="108" height="68" rx="7" fill="#11162a" stroke="#3a4a7a" strokeWidth="2" />
-              <rect x="75" y="103" width="90" height="50" rx="3" fill="#0a0f1f">
-                <animate attributeName="fill" values="#0a0f1f;#182a55;#0a0f1f" dur="3s" repeatCount="indefinite" />
-              </rect>
-              <rect x="84" y="112" width="42" height="4" rx="2" fill="#4da6ff" opacity=".85" />
-              <rect x="84" y="122" width="62" height="4" rx="2" fill="#7bffb0" opacity=".75" />
-              <rect x="84" y="132" width="32" height="4" rx="2" fill="#ff6ad5" opacity=".75" />
-              <rect x="112" y="162" width="16" height="10" fill="#232a4a" />
-              <path d="M96 152 q28 -26 56 0 l0 16 -56 0 z" fill="#3a4a7a" />
-              <circle cx="124" cy="58" r="23" fill="#2a3560" />
-              <path d="M101 55 q23 -20 46 0 q-2 16 -23 20 q-21 -4 -23 -20 z" fill="#111634" />
-            </svg>
-          </>
-        ) : (
-          <>
-            <div className="light-orb light-orb-1"></div>
-            <div className="light-orb light-orb-2"></div>
-            <div className="light-orb light-orb-3"></div>
-            <div className="hero-bg-icon" aria-hidden="true">{'</>'}</div>
-          </>
-        )}
-        <h1>{t.heroTitulo}</h1>
-        <p>{t.heroSub}</p>
+          </div>
+          <OrbitScene />
+        </div>
       </section>
       <div id="sobre" className="container about-container">
-        <span className="about-kicker">{t.aboutKicker}</span>
-        <h2 className="about-title">{t.aboutTitulo}</h2>
+        <Reveal as="span" className="about-kicker">{t.aboutKicker}</Reveal>
+        <Reveal as="h2" className="about-title">{t.aboutTitulo}</Reveal>
         <div className="about-grid">
           <div className="about-text">
-            {t.aboutParagrafos.map((p, i) => <p key={i}>{p}</p>)}
+            {t.aboutParagrafos.map((p, i) => <Reveal as="p" delay={i * 80} key={i}>{p}</Reveal>)}
           </div>
           <div className="about-stats">
-            {t.stats.map(s => (
-              <div className="stat-card" key={s.label}><span className="stat-num">{s.num}</span><span className="stat-label">{s.label}</span></div>
+            {t.stats.map((s, i) => (
+              <Reveal as="div" className="stat-card" delay={i * 90} key={s.label}>
+                <span className="stat-num"><Counter value={s.num} /></span>
+                <span className="stat-label">{s.label}</span>
+              </Reveal>
             ))}
           </div>
         </div>
       </div>
       <div id="projetos" className="container">
-        <h2>{t.projetosTitulo}</h2>
+        <Reveal as="h2">{t.projetosTitulo}</Reveal>
         <Carousel slides={PROJETOS.length}>
           {PROJETOS.map(p => (
             <div className="carousel-slide" key={p.id}><ProjectCard p={p} t={t} lang={lang} /></div>
@@ -323,23 +462,25 @@ export default function App() {
         </Carousel>
       </div>
       <div className="container">
-        <h2>{t.destaquesTitulo}</h2>
-        <p className="destaques-sub">{t.destaquesSub}</p>
+        <Reveal as="h2">{t.destaquesTitulo}</Reveal>
+        <Reveal as="p" className="destaques-sub">{t.destaquesSub}</Reveal>
         <div className="grid destaques-grid">
-          {DESTAQUES.map(p => <ProjectCard key={p.id} p={p} t={t} lang={lang} />)}
+          {DESTAQUES.map((p, i) => (
+            <Reveal delay={i * 90} key={p.id}><ProjectCard p={p} t={t} lang={lang} /></Reveal>
+          ))}
         </div>
       </div>
       <div id="stack" className="container">
-        <h2>{t.stackTitulo}</h2>
-        <p className="destaques-sub">{t.stackSub}</p>
+        <Reveal as="h2">{t.stackTitulo}</Reveal>
+        <Reveal as="p" className="destaques-sub">{t.stackSub}</Reveal>
         <div className="stack-groups">
-          {STACK.map(({ id, itens }) => (
-            <div className="stack-group" key={id}>
+          {STACK.map(({ id, itens }, i) => (
+            <Reveal as="div" className="stack-group" delay={i * 90} key={id}>
               <h3 className="stack-group-title">{t.stackGrupos[id]}</h3>
               <div className="stack-badges">
                 {itens.map(item => <span className="stack-badge" key={item}>{item}</span>)}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
