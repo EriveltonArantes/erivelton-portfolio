@@ -1,206 +1,13 @@
 import React from 'react';
-
-// IntersectionObserver simples: dispara uma vez quando o elemento entra na
-// tela e não desliga mais — usado tanto pro fade-in de seção (Reveal)
-// quanto pro contador animado das estatísticas (Counter).
-function useOnScreen(ref, rootMargin = '-60px') {
-  const [visible, setVisible] = React.useState(false);
-  React.useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setVisible(true); obs.unobserve(el); }
-    }, { rootMargin, threshold: 0.15 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [ref, rootMargin]);
-  return visible;
-}
-
-// Fade+slide-up genérico ao rolar até o elemento; `delay` (ms) permite
-// escalonar itens de uma grade pra entrarem em cascata em vez de juntos.
-function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
-  const ref = React.useRef(null);
-  const visible = useOnScreen(ref);
-  return (
-    <Tag ref={ref} className={`reveal ${visible ? 'is-visible' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
-      {children}
-    </Tag>
-  );
-}
-
-// Números das estatísticas ("13", "8", "~3", "10+") contam de 0 até o
-// valor real quando entram na tela, em vez de aparecer estático.
-function Counter({ value }) {
-  const ref = React.useRef(null);
-  const visible = useOnScreen(ref, '-40px');
-  const match = value.match(/^(~?)(\d+)(\+?)$/);
-  const [display, setDisplay] = React.useState(match ? `${match[1]}0${match[3]}` : value);
-
-  React.useEffect(() => {
-    if (!visible || !match) return;
-    const [, prefix, numStr, suffix] = match;
-    const target = parseInt(numStr, 10);
-    const duration = 1100;
-    const start = performance.now();
-    let raf;
-    const tick = (now) => {
-      const p = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setDisplay(`${prefix}${Math.round(eased * target)}${suffix}`);
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
-
-  return <span ref={ref}>{display}</span>;
-}
-
-// 16 partículas flutuando devagar atrás do hero — posição/duração
-// pseudo-aleatórias mas fixas (calculadas uma vez no load do módulo).
-const PARTICLES = Array.from({ length: 16 }, (_, i) => ({
-  left: (i * 37) % 100,
-  size: 2 + ((i * 13) % 4),
-  duration: 9 + ((i * 7) % 10),
-  delay: -((i * 3) % 12),
-}));
-
-// Ícones da stack orbitando em 3D em volta de um hub com brilho pulsante.
-// Cada item conta com uma animação de contra-rotação (orbitCounter) da
-// MESMA duração do giro do anel (orbitSpin), então mesmo girando junto
-// com o anel ele se cancela e o emoji fica sempre em pé — técnica clássica
-// de "satélites em órbita" só com CSS, sem lib 3D nenhuma.
-const ORBIT_ITENS = [
-  { emoji: '☕', label: 'Java' },
-  { emoji: '🍃', label: 'Spring' },
-  { emoji: '⚛️', label: 'React' },
-  { emoji: '🐘', label: 'SQL' },
-  { emoji: '🐳', label: 'Docker' },
-  { emoji: '🔐', label: 'JWT' },
-];
-
-// Órbita gira sozinha o tempo todo (animação CSS em .orbit-ring). Além
-// disso, .orbit-manual soma uma rotação extra que o usuário controla à
-// mão: mexendo o mouse por cima, o anel gira mais rápido/devagar ou muda
-// de direção — feito só com o deslocamento (delta) do cursor entre dois
-// mousemove, aplicado direto via ref (sem re-render a cada pixel).
-function OrbitScene() {
-  const stageRef = React.useRef(null);
-  const manualRef = React.useRef(null);
-  const lastX = React.useRef(null);
-  const manualDeg = React.useRef(0);
-
-  const onMove = (e) => {
-    const stage = stageRef.current;
-    if (stage) {
-      const r = stage.parentElement.getBoundingClientRect();
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      stage.style.setProperty('--tiltX', `${58 - y * 14}deg`);
-    }
-    if (lastX.current !== null && manualRef.current) {
-      const deltaX = e.clientX - lastX.current;
-      manualDeg.current += deltaX * 0.7;
-      manualRef.current.style.transform = `rotate(${manualDeg.current}deg)`;
-    }
-    lastX.current = e.clientX;
-  };
-  const onEnter = (e) => { lastX.current = e.clientX; };
-  const onLeave = () => {
-    lastX.current = null;
-    const stage = stageRef.current;
-    if (stage) stage.style.setProperty('--tiltX', '58deg');
-  };
-
-  return (
-    <div className="orbit-scene" onMouseMove={onMove} onMouseEnter={onEnter} onMouseLeave={onLeave} aria-hidden="true">
-      <div className="orbit-stage" ref={stageRef}>
-        <div className="orbit-hub"><span>{'</>'}</span></div>
-        <div className="orbit-manual" ref={manualRef}>
-          <div className="orbit-ring">
-            {ORBIT_ITENS.map((it, i) => (
-              <div className="orbit-item" key={it.label} style={{ '--angle': `${(360 / ORBIT_ITENS.length) * i}deg` }}>
-                <div
-                  className="orbit-item-counter"
-                  title={it.label}
-                  style={{ animationDelay: `0s, ${-(i * 1.6)}s` }}
-                >
-                  <span
-                    className="orbit-item-face"
-                    style={{
-                      animationDuration: `${6 + i * 0.8}s`,
-                      animationDirection: i % 2 ? 'reverse' : 'normal',
-                    }}
-                  >{it.emoji}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TiltCard({ children }) {
-  const ref = React.useRef(null);
-
-  const onMove = (e) => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-4px)`;
-  };
-  const onLeave = () => {
-    if (ref.current) ref.current.style.transform = 'rotateY(0) rotateX(0) translateY(0)';
-  };
-
-  return (
-    <div className="tilt-wrap">
-      <div ref={ref} className="card proj-card" onMouseMove={onMove} onMouseLeave={onLeave}>
-        {children}
-      </div>
-    </div>
-  );
-}
-
-// Carousel real: auto-rotação (5s), setas e dots clicáveis, pausa ao passar
-// o mouse — não é só CSS de enfeite, tem estado de verdade (useState/useEffect).
-function Carousel({ slides, children }) {
-  const [index, setIndex] = React.useState(0);
-  const [pausado, setPausado] = React.useState(false);
-  const total = React.Children.count(children) || slides || 1;
-
-  React.useEffect(() => {
-    if (pausado || total <= 1) return;
-    const timer = setInterval(() => setIndex(i => (i + 1) % total), 5000);
-    return () => clearInterval(timer);
-  }, [pausado, total]);
-
-  const irPara = (i) => setIndex(((i % total) + total) % total);
-
-  return (
-    <div className="carousel" onMouseEnter={() => setPausado(true)} onMouseLeave={() => setPausado(false)}>
-      <div className="carousel-track" style={{ transform: `translateX(-${index * 100}%)` }}>
-        {children}
-      </div>
-      {total > 1 && (
-        <>
-          <button className="carousel-arrow carousel-prev" onClick={() => irPara(index - 1)} aria-label="Previous">‹</button>
-          <button className="carousel-arrow carousel-next" onClick={() => irPara(index + 1)} aria-label="Next">›</button>
-          <div className="carousel-dots">
-            {Array.from({ length: total }).map((_, i) => (
-              <button key={i} className={`carousel-dot ${i === index ? 'active' : ''}`} onClick={() => irPara(i)} aria-label={`Go to slide ${i + 1}`} />
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
+import CursorPersonalizado from './componentes/CursorPersonalizado.jsx';
+import HeroAnimado from './componentes/HeroAnimado.jsx';
+import BotaoMagnetico from './componentes/BotaoMagnetico.jsx';
+import Revelar, { Contador } from './componentes/Revelar.jsx';
+import CartaoProjeto from './componentes/CartaoProjeto.jsx';
+import GradeProjetos from './componentes/GradeProjetos.jsx';
+import PaginaErro from './componentes/PaginaErro.jsx';
+import Rodape from './componentes/Rodape.jsx';
+import useLenis from './componentes/useLenis.js';
 
 const CONTATO = {
   whatsapp: 'https://wa.me/5534996915734',
@@ -216,60 +23,51 @@ const STACK = [
   { id: 'arquitetura', itens: ['Clean Architecture', 'SOLID', 'RBAC', 'Auditoria de dados'] },
 ];
 
-// Cada projeto do carrossel "Projetos entregues" — nome/descrição em pt/en,
-// screenshot e URL (Vercel, zero cold start) compartilhados entre os dois idiomas.
+// Cada projeto — nome/descrição em pt/en, screenshot e URL.
 const PROJETOS = [
-  { id: 'escola', screenshot: 'screenshots/https-escola-vitrine-escola-api-frontend-onrender-com.png', url: 'https://escola-vitrine-escola-api-frontend.vercel.app',
+  { id: 'sorveteria', novo: true, categoria: 'comercio', tema: ['🍦', '🍨', '🛎️'], screenshot: 'screenshots/sorveteria.png', url: 'https://sorveteria-completa.vercel.app',
+    nome: { pt: 'Sorveteria', en: 'Ice Cream Shop' },
+    desc: { pt: 'Cardápio, balcão, mesas, pedidos com acompanhamento ao vivo, Pix e WhatsApp.', en: 'Menu, counter, tables, orders with live tracking, Pix and WhatsApp.' } },
+  { id: 'assistencia', novo: true, categoria: 'servicos', tema: ['🔧', '📱', '🖨️'], screenshot: 'screenshots/assistencia.png', url: 'https://assistencia-pro.vercel.app',
+    nome: { pt: 'Assistência Técnica Pro', en: 'Pro Repair Shop' },
+    desc: { pt: 'Ordens de serviço com foto, estoque de peças sem furo, impressão da OS, Pix e aviso no WhatsApp.', en: 'Work orders with photo, stock without leaks, OS printing, Pix and WhatsApp notification.' } },
+  { id: 'clinica-vida', novo: true, categoria: 'saude', tema: ['🩺', '💊', '❤️'], screenshot: 'screenshots/clinica-vida.png', url: 'https://clinica-vida.vercel.app',
+    nome: { pt: 'Clínica Vida', en: 'Clinic Vida' },
+    desc: { pt: 'Agenda por profissional sem conflito de horário, prontuário, convênios, Pix e agendamento online.', en: 'Per-professional schedule without conflicts, medical records, insurance, Pix and online booking.' } },
+  { id: 'academia-forca', novo: true, categoria: 'saude', tema: ['🏋️', '💪', '🔥'], screenshot: 'screenshots/academia-forca.png', url: 'https://academia-forca.vercel.app',
+    nome: { pt: 'Academia Força Total', en: 'Gym Força Total' },
+    desc: { pt: 'Alunos, planos, grade de aulas, mensalidades com Pix, avaliação física e aula experimental online.', en: 'Students, plans, class schedule, Pix payments, fitness assessment and online trial class.' } },
+  { id: 'petshop-amigo', novo: true, categoria: 'servicos', tema: ['🐶', '🐱', '🐾'], screenshot: 'screenshots/petshop-amigo.png', url: 'https://petshop-amigo.vercel.app',
+    nome: { pt: 'Petshop Amigo Fiel', en: 'Pet Shop Amigo Fiel' },
+    desc: { pt: 'Banho e tosa com agenda, prontuário veterinário, aviso de pet pronto no WhatsApp e agendamento online.', en: 'Grooming schedule, veterinary records, pet-ready WhatsApp alert and online booking.' } },
+  { id: 'escola', categoria: 'gestao', tema: ['📚', '✏️', '🎒'], screenshot: 'screenshots/https-escola-vitrine-escola-api-frontend-onrender-com.png', url: 'https://escola-vitrine-escola-api-frontend.vercel.app',
     nome: { pt: 'Escola', en: 'School' },
     desc: { pt: 'Matrícula, notas, boletim automático, financeiro com cobrança e portal da família — nível empresarial.', en: 'Enrollment, grades, automatic report cards, billing and a family portal — enterprise-grade.' } },
-  { id: 'marketplace', screenshot: 'screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png', url: 'https://feira-livre-marketplace-api-fronten.vercel.app',
+  { id: 'marketplace', categoria: 'comercio', tema: ['🥕', '🧺', '🍅'], screenshot: 'screenshots/https-feira-livre-marketplace-api-frontend-onrender-com.png', url: 'https://feira-livre-marketplace-api-fronten.vercel.app',
     nome: { pt: 'Marketplace', en: 'Marketplace' },
     desc: { pt: 'Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.', en: 'Amazon/Shopee-level multi-vendor: stores, commission, cart, product variants and payment gateway.' } },
-  { id: 'clinica', screenshot: 'screenshots/https-clinica-api-api-frontend-onrender-com.png', url: 'https://clinica-api-api-frontend.vercel.app',
-    nome: { pt: 'Clínica', en: 'Clinic' },
-    desc: { pt: 'Pacientes, agendamento sem conflito, prontuário com timeline e convênio — auth JWT + RBAC + auditoria.', en: 'Patients, conflict-free scheduling, timeline medical records and insurance — JWT auth + RBAC + audit log.' } },
-  { id: 'barbearia', screenshot: 'screenshots/https-rede-barbearias-api-frontend-onrender-com.png', url: 'https://rede-barbearias-api-frontend.vercel.app',
+  { id: 'barbearia', categoria: 'servicos', tema: ['✂️', '💈', '🪒'], screenshot: 'screenshots/https-rede-barbearias-api-frontend-onrender-com.png', url: 'https://rede-barbearias-api-frontend.vercel.app',
     nome: { pt: 'Barbearia', en: 'Barbershop' },
     desc: { pt: 'Multi-unidade: agenda visual por barbeiro, comissão automática e dashboard de faturamento.', en: 'Multi-location: visual schedule per barber, automatic commission and revenue dashboard.' } },
-  { id: 'petshop', screenshot: 'screenshots/https-amigo-fiel-petshop-api-frontend-onrender-com.png', url: 'https://amigo-fiel-petshop-api-frontend.vercel.app',
-    nome: { pt: 'Petshop', en: 'Pet Shop' },
-    desc: { pt: 'Tutor com autoatendimento, agenda de banho e tosa, prontuário do pet e financeiro — RBAC completo.', en: 'Self-service owner portal, grooming schedule, pet medical record and finances — full RBAC.' } },
-  { id: 'academia', screenshot: 'screenshots/https-academia-api-frontend-vercel-app.jpg', url: 'https://academia-api-frontend.vercel.app',
-    nome: { pt: 'Academia', en: 'Gym' },
-    desc: { pt: 'Landing page com mascote animado mostrando a evolução real do aluno, modalidades, planos puxados ao vivo da API e painel de gestão completo (matrícula, turma, frequência, avaliação física).', en: 'Landing page with an animated mascot showing the member\'s real progress, class types, live pricing from the API, and a full back-office (enrollment, classes, attendance, fitness assessments).' } },
-  { id: 'oficina', screenshot: 'screenshots/https-oficina-mecanica-api-frontend-onrender-com.png', url: 'https://oficina-mecanica-api-frontend.vercel.app',
+  { id: 'oficina', categoria: 'servicos', tema: ['🚗', '🔧', '🔩'], screenshot: 'screenshots/https-oficina-mecanica-api-frontend-onrender-com.png', url: 'https://oficina-mecanica-api-frontend.vercel.app',
     nome: { pt: 'Oficina Mecânica', en: 'Auto Repair Shop' },
     desc: { pt: 'Ordens de serviço, controle por mecânico, peças e comissão — backend Java + frontend React.', en: 'Work orders, per-mechanic tracking, parts and commission — Java backend + React frontend.' } },
-  { id: 'hotel', screenshot: 'screenshots/https-hotel-vitrine-hotel-api-frontend-onrender-com.png', url: 'https://hotel-vitrine-hotel-api-frontend.vercel.app',
+  { id: 'hotel', categoria: 'servicos', tema: ['🏨', '🧳', '🌴'], screenshot: 'screenshots/https-hotel-vitrine-hotel-api-frontend-onrender-com.png', url: 'https://hotel-vitrine-hotel-api-frontend.vercel.app',
     nome: { pt: 'Rede de Hotéis', en: 'Hotel Chain' },
     desc: { pt: 'Multi-propriedade, mapa de quartos por unidade/andar, portal do hóspede e financeiro com ocupação.', en: 'Multi-property, room map by unit/floor, guest portal and occupancy-based finances.' } },
-  { id: 'restaurante', screenshot: 'screenshots/https-restaurante-oficial-restaurante-api-frontend-onrender-com.png', url: 'https://restaurante-oficial-restaurante-api.vercel.app',
+  { id: 'restaurante', categoria: 'comercio', tema: ['🍽️', '🍷', '👨‍🍳'], screenshot: 'screenshots/https-restaurante-oficial-restaurante-api-frontend-onrender-com.png', url: 'https://restaurante-oficial-restaurante-api.vercel.app',
     nome: { pt: 'Restaurante', en: 'Restaurant' },
     desc: { pt: 'Mapa de mesas, pedidos por status até a cozinha, cardápio e comissão de garçom.', en: 'Table map, order status tracking to the kitchen, menu and waiter commission.' } },
-  { id: 'banco', screenshot: 'screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png', url: 'https://banco-vitrine-banco-api-frontend.vercel.app',
+  { id: 'banco', categoria: 'financas', tema: ['💳', '💰', '🏦'], screenshot: 'screenshots/https-banco-vitrine-banco-api-frontend-onrender-com.png', url: 'https://banco-vitrine-banco-api-frontend.vercel.app',
     nome: { pt: 'Banco Digital', en: 'Digital Bank' },
     desc: { pt: 'Ledger de partida dobrada, PIX/TED, limite diário e bloqueio automático de fraude — nível fintech.', en: 'Double-entry ledger, PIX/wire transfer, daily limit and automatic fraud blocking — fintech-grade.' } },
-  { id: 'ead', screenshot: 'screenshots/https-ead-cursos-api-frontend-vercel-app.png', url: 'https://ead-cursos-api-frontend.vercel.app',
+  { id: 'ead', categoria: 'gestao', tema: ['🎓', '💻', '🏆'], screenshot: 'screenshots/https-ead-cursos-api-frontend-vercel-app.png', url: 'https://ead-cursos-api-frontend.vercel.app',
     nome: { pt: 'EAD — Venda de Cursos', en: 'EAD — Online Courses' },
     desc: { pt: 'Portal do aluno self-service: catálogo, compra, matrícula travada por pagamento, aula/quiz e certificado automático ao concluir.', en: 'Self-service student portal: catalog, purchase, payment-gated enrollment, lesson/quiz and automatic certificate on completion.' } },
-  { id: 'leilao', screenshot: 'screenshots/https-leilao-online-api-frontend-vercel-app.png', url: 'https://leilao-online-api-frontend.vercel.app',
+  { id: 'leilao', categoria: 'comercio', tema: ['🔨', '🏷️', '💎'], screenshot: 'screenshots/https-leilao-online-api-frontend-vercel-app.png', url: 'https://leilao-online-api-frontend.vercel.app',
     nome: { pt: 'Leilão Online', en: 'Online Auction' },
     desc: { pt: 'Lances em tempo real com anti-sniping (estende o prazo no último minuto), lance mínimo validado e encerramento automático que define o vencedor sozinho.', en: 'Real-time bidding with anti-sniping (auto-extends in the last minute), validated minimum bid and automatic closing that picks the winner on its own.' } },
 ];
-
-// Os 4 mais fortes ganham vitrine própria em "Destaques", com uma descrição
-// mais profunda (não é o mesmo texto do carrossel) — reaproveita screenshot/url.
-const DESTAQUES_IDS = ['banco', 'hotel', 'restaurante', 'marketplace'];
-const DESTAQUES_DESC = {
-  banco: { pt: 'Ledger de partida dobrada de verdade — toda transferência debita e credita atomicamente, com limite diário e bloqueio automático de fraude.', en: 'A real double-entry ledger — every transfer debits and credits atomically, with daily limit and automatic fraud blocking.' },
-  hotel: { pt: 'Multi-propriedade nível grande rede: mapa de quartos por unidade/andar, reserva sem sobreposição de datas e portal do hóspede.', en: 'Big-chain-level multi-property: room map by unit/floor, no-overlap date booking and guest portal.' },
-  restaurante: { pt: 'Mesa ocupa/libera sozinha com o pedido, item bloqueado quando sai do cardápio, comissão de garçom calculada pelo servidor.', en: "Table occupies/frees itself with the order, item locked when it's off the menu, waiter commission calculated server-side." },
-  marketplace: { pt: 'Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.', en: 'Amazon/Shopee-level multi-vendor: stores, commission, cart, product variants and payment gateway.' },
-};
-const DESTAQUES = DESTAQUES_IDS.map(id => {
-  const p = PROJETOS.find(x => x.id === id);
-  return { ...p, desc: DESTAQUES_DESC[id] };
-});
 
 const T = {
   pt: {
@@ -303,6 +101,12 @@ const T = {
     noAr: 'No ar',
     verSistema: 'Ver sistema no ar →',
     abrirMenu: 'Abrir menu',
+    filtroTodos: 'Todos',
+    cat_gestao: 'Gestão',
+    cat_saude: 'Saúde',
+    cat_comercio: 'Comércio',
+    cat_financas: 'Finanças',
+    cat_servicos: 'Serviços',
   },
   en: {
     nav: { sobre: 'About', projetos: 'Projects', stack: 'Stack', contato: 'Contact' },
@@ -335,23 +139,28 @@ const T = {
     noAr: 'Live',
     verSistema: 'View live system →',
     abrirMenu: 'Open menu',
+    filtroTodos: 'All',
+    cat_gestao: 'Management',
+    cat_saude: 'Health',
+    cat_comercio: 'Commerce',
+    cat_financas: 'Finance',
+    cat_servicos: 'Services',
   },
 };
 
-function ProjectCard({ p, t, lang }) {
-  return (
-    <TiltCard>
-      <div className="browser-frame">
-        <div className="bar"><span></span><span></span><span></span></div>
-        <img src={`${import.meta.env.BASE_URL}${p.screenshot}`} alt={p.nome[lang]} loading="lazy" />
-      </div>
-      <span className="proj-badge"><span className="dot"></span>{t.noAr}</span>
-      <h3>{p.nome[lang]}</h3>
-      <p>{p.desc[lang]}</p>
-      <a className="proj-link" href={p.url} target="_blank" rel="noreferrer">{t.verSistema}</a>
-    </TiltCard>
-  );
-}
+// Destaques
+const DESTAQUES_IDS = ['banco', 'hotel', 'restaurante', 'marketplace'];
+const DESTAQUES_DESC = {
+  banco: { pt: 'Ledger de partida dobrada de verdade — toda transferência debita e credita atomicamente, com limite diário e bloqueio automático de fraude.', en: 'A real double-entry ledger — every transfer debits and credits atomically, with daily limit and automatic fraud blocking.' },
+  hotel: { pt: 'Multi-propriedade nível grande rede: mapa de quartos por unidade/andar, reserva sem sobreposição de datas e portal do hóspede.', en: 'Big-chain-level multi-property: room map by unit/floor, no-overlap date booking and guest portal.' },
+  restaurante: { pt: 'Mesa ocupa/libera sozinha com o pedido, item bloqueado quando sai do cardápio, comissão de garçom calculada pelo servidor.', en: "Table occupies/frees itself with the order, item locked when it's off the menu, waiter commission calculated server-side." },
+  marketplace: { pt: 'Multi-vendedor nível Amazon/Shopee: lojas, comissão, carrinho, variação de produto e gateway de pagamento.', en: 'Amazon/Shopee-level multi-vendor: stores, commission, cart, product variants and payment gateway.' },
+};
+const DESTAQUES = DESTAQUES_IDS.map(id => {
+  const p = PROJETOS.find(x => x.id === id);
+  if (!p) return null;
+  return { ...p, desc: DESTAQUES_DESC[id] };
+}).filter(Boolean);
 
 function Navbar({ lang, setLang, t }) {
   const [aberto, setAberto] = React.useState(false);
@@ -385,106 +194,87 @@ function Navbar({ lang, setLang, t }) {
   );
 }
 
-function Footer({ t }) {
-  return (
-    <footer id="contato" className="footer">
-      <div className="container footer-inner">
-        <div>
-          <h2>{t.footerTitulo}</h2>
-          <p className="destaques-sub">{t.footerSub}</p>
-        </div>
-        <div className="footer-links">
-          <a href={CONTATO.whatsapp} target="_blank" rel="noreferrer" className="footer-link">💬 WhatsApp — {CONTATO.telefone}</a>
-          <a href={CONTATO.github} target="_blank" rel="noreferrer" className="footer-link">GitHub — EriveltonArantes</a>
-          <a href={CONTATO.linkedin} target="_blank" rel="noreferrer" className="footer-link">LinkedIn — Erivelton Arantes de Souza</a>
-        </div>
-      </div>
-      <p className="footer-copy">© {new Date().getFullYear()} Erivelton Arantes — {t.footerCopy}.</p>
-    </footer>
-  );
-}
-
 export default function App() {
   const [lang, setLang] = React.useState('pt');
   const t = T[lang];
+  const [hash, setHash] = React.useState(window.location.hash);
+
+  useLenis();
+
+  React.useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // Página de erro para /#/erro ou qualquer hash não vazio
+  const paginaAtual = hash.replace('#', '');
+  if (paginaAtual && paginaAtual !== 'topo' && paginaAtual !== 'sobre' && paginaAtual !== 'projetos' && paginaAtual !== 'stack' && paginaAtual !== 'contato') {
+    return (
+      <div>
+        <CursorPersonalizado />
+        <PaginaErro lang={lang} />
+      </div>
+    );
+  }
 
   return (
     <div>
+      <CursorPersonalizado />
       <Navbar lang={lang} setLang={setLang} t={t} />
-      <section id="topo" className="hero">
-        <div className="light-orb light-orb-1"></div>
-        <div className="light-orb light-orb-2"></div>
-        <div className="light-orb light-orb-3"></div>
-        <div className="hero-aurora" aria-hidden="true"></div>
-        <div className="hero-particles" aria-hidden="true">
-          {PARTICLES.map((p, i) => (
-            <span key={i} className="particle" style={{
-              left: `${p.left}%`, width: p.size, height: p.size,
-              animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s`,
-            }} />
-          ))}
+      <HeroAnimado titulo={t.heroTitulo} sub={t.heroSub}>
+        <div className="hero-cta-row">
+          <BotaoMagnetico className="hero-cta hero-cta-primary" href="#projetos">{t.heroCtaProjetos}</BotaoMagnetico>
+          <BotaoMagnetico className="hero-cta hero-cta-ghost" href={CONTATO.whatsapp}>{t.heroCtaContato}</BotaoMagnetico>
         </div>
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <h1>{t.heroTitulo}</h1>
-            <p>{t.heroSub}</p>
-            <div className="hero-cta-row">
-              <a className="hero-cta hero-cta-primary" href="#projetos">{t.heroCtaProjetos}</a>
-              <a className="hero-cta hero-cta-ghost" href={CONTATO.whatsapp} target="_blank" rel="noreferrer">{t.heroCtaContato}</a>
-            </div>
-          </div>
-          <OrbitScene />
-        </div>
-      </section>
+      </HeroAnimado>
       <div id="sobre" className="container about-container">
-        <Reveal as="span" className="about-kicker">{t.aboutKicker}</Reveal>
-        <Reveal as="h2" className="about-title">{t.aboutTitulo}</Reveal>
+        <Revelar as="span" className="about-kicker">{t.aboutKicker}</Revelar>
+        <Revelar as="h2" className="about-title">{t.aboutTitulo}</Revelar>
         <div className="about-grid">
           <div className="about-text">
-            {t.aboutParagrafos.map((p, i) => <Reveal as="p" delay={i * 80} key={i}>{p}</Reveal>)}
+            {t.aboutParagrafos.map((p, i) => <Revelar as="p" delay={i * 80} key={i}>{p}</Revelar>)}
           </div>
           <div className="about-stats">
             {t.stats.map((s, i) => (
-              <Reveal as="div" className="stat-card" delay={i * 90} key={s.label}>
-                <span className="stat-num"><Counter value={s.num} /></span>
+              <Revelar as="div" className="stat-card" delay={i * 90} key={s.label}>
+                <span className="stat-num"><Contador value={s.num} /></span>
                 <span className="stat-label">{s.label}</span>
-              </Reveal>
+              </Revelar>
             ))}
           </div>
         </div>
       </div>
       <div id="projetos" className="container">
-        <Reveal as="h2">{t.projetosTitulo}</Reveal>
-        <Carousel slides={PROJETOS.length}>
-          {PROJETOS.map(p => (
-            <div className="carousel-slide" key={p.id}><ProjectCard p={p} t={t} lang={lang} /></div>
-          ))}
-        </Carousel>
+        <Revelar as="h2">{t.projetosTitulo}</Revelar>
+        <GradeProjetos projetos={PROJETOS} t={t} lang={lang} />
       </div>
       <div className="container">
-        <Reveal as="h2">{t.destaquesTitulo}</Reveal>
-        <Reveal as="p" className="destaques-sub">{t.destaquesSub}</Reveal>
+        <Revelar as="h2">{t.destaquesTitulo}</Revelar>
+        <Revelar as="p" className="destaques-sub">{t.destaquesSub}</Revelar>
         <div className="grid destaques-grid">
           {DESTAQUES.map((p, i) => (
-            <Reveal delay={i * 90} key={p.id}><ProjectCard p={p} t={t} lang={lang} /></Reveal>
+            <Revelar delay={i * 90} key={p.id}>
+              <CartaoProjeto p={p} t={t} lang={lang} />
+            </Revelar>
           ))}
         </div>
       </div>
       <div id="stack" className="container">
-        <Reveal as="h2">{t.stackTitulo}</Reveal>
-        <Reveal as="p" className="destaques-sub">{t.stackSub}</Reveal>
+        <Revelar as="h2">{t.stackTitulo}</Revelar>
+        <Revelar as="p" className="destaques-sub">{t.stackSub}</Revelar>
         <div className="stack-groups">
           {STACK.map(({ id, itens }, i) => (
-            <Reveal as="div" className="stack-group" delay={i * 90} key={id}>
+            <Revelar as="div" className="stack-group" delay={i * 90} key={id}>
               <h3 className="stack-group-title">{t.stackGrupos[id]}</h3>
               <div className="stack-badges">
                 {itens.map(item => <span className="stack-badge" key={item}>{item}</span>)}
               </div>
-            </Reveal>
+            </Revelar>
           ))}
         </div>
       </div>
-      <Footer t={t} />
+      <Rodape t={t} contato={CONTATO} />
       <a className="whatsapp-fab" href={CONTATO.whatsapp} target="_blank" rel="noreferrer">💬</a>
     </div>
   );
