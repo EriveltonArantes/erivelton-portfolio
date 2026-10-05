@@ -6,6 +6,7 @@ import Revelar, { Contador } from './componentes/Revelar.jsx';
 import CartaoProjeto from './componentes/CartaoProjeto.jsx';
 import GradeProjetos from './componentes/GradeProjetos.jsx';
 import PaginaErro from './componentes/PaginaErro.jsx';
+import SecaoLanterna from './componentes/SecaoLanterna.jsx';
 import Rodape from './componentes/Rodape.jsx';
 import useLenis from './componentes/useLenis.js';
 
@@ -17,10 +18,10 @@ const CONTATO = {
 };
 
 const STACK = [
-  { id: 'backend', itens: ['Java', 'Spring Boot', 'REST APIs', 'JWT', 'JPA / Hibernate'] },
-  { id: 'dados', itens: ['PostgreSQL', 'Docker', 'Git', 'Swagger'] },
-  { id: 'frontend', itens: ['React', 'Angular', 'JavaScript', 'Vite'] },
-  { id: 'arquitetura', itens: ['Clean Architecture', 'SOLID', 'RBAC', 'Auditoria de dados'] },
+  { id: 'backend', cor: 'azul', itens: ['Java', 'Spring Boot', 'FastAPI', 'REST APIs', 'JWT', 'JPA / Hibernate', 'PostgreSQL', 'Clean Architecture', 'RBAC'] },
+  { id: 'deploy', cor: 'roxo', itens: ['Docker', 'GitHub Actions', 'CI/CD', 'Render', 'Vercel', 'Neon (Postgres serverless)', 'Git'] },
+  { id: 'ia', cor: 'verde', itens: ['Agentes de IA', 'Pipelines com LLM', 'Python', 'Testes automatizados', 'Playwright', 'Pytest'] },
+  { id: 'frontend', cor: 'rosa', itens: ['React', 'Angular', 'JavaScript', 'Vite', 'GSAP', 'Lenis'] },
 ];
 
 // Cada projeto — nome/descrição em pt/en, screenshot e URL.
@@ -94,7 +95,18 @@ const T = {
     destaquesSub: '4 sistemas completos: backend Java + Spring Boot, frontend React, autenticação e deploy real — clique e navegue ao vivo.',
     stackTitulo: 'Stack',
     stackSub: 'O que uso pra tirar um sistema do zero e colocar em produção — sozinho, do banco de dados até a interface.',
-    stackGrupos: { backend: 'Back-end', dados: 'Dados & Infra', frontend: 'Front-end', arquitetura: 'Arquitetura' },
+    fabrica: {
+      kicker: 'Como eu construo',
+      titulo: 'Uma fábrica de software com IA — e testes que não deixam nada passar',
+      dica: 'mova o mouse para iluminar',
+      passos: [
+        { titulo: 'Contrato', texto: 'Cada sistema começa como uma especificação: entidades, regras de negócio, perfis de acesso e exemplos do que tem que acontecer.' },
+        { titulo: 'Agentes de IA codam', texto: 'Um pipeline com LLM escreve back-end e front-end em fatias pequenas, seguindo convenções fixas — dentro de um ambiente isolado.' },
+        { titulo: 'A fábrica testa tudo', texto: 'Mais de 100 testes por sistema: API, regras, segurança e navegador real campo a campo. Os testes nunca são escritos por quem coda.' },
+        { titulo: 'Publica com 1 comando', texto: 'Docker, banco Postgres, API e site no ar automaticamente — GitHub, Render, Vercel e Neon. As demos desta página nasceram assim.' },
+      ],
+    },
+    stackGrupos: { backend: 'Back-end & dados', deploy: 'Container & deploy', ia: 'Automação & IA', frontend: 'Front-end & UX' },
     footerTitulo: 'Vamos conversar',
     footerSub: 'Aberto a oportunidades de desenvolvimento full stack Java/React. Resposta rápida por WhatsApp.',
     footerCopy: 'desenvolvido com React',
@@ -132,7 +144,18 @@ const T = {
     destaquesSub: '4 complete systems: Java + Spring Boot backend, React frontend, real auth and deploy — click and navigate live.',
     stackTitulo: 'Stack',
     stackSub: 'What I use to take a system from zero to production — solo, from the database to the interface.',
-    stackGrupos: { backend: 'Back-end', dados: 'Data & Infra', frontend: 'Front-end', arquitetura: 'Architecture' },
+    fabrica: {
+      kicker: 'How I build',
+      titulo: 'An AI software factory — with tests that let nothing slip',
+      dica: 'move your mouse to light it up',
+      passos: [
+        { titulo: 'Contract', texto: 'Every system starts as a spec: entities, business rules, access roles and examples of what must happen.' },
+        { titulo: 'AI agents code', texto: 'An LLM pipeline writes back-end and front-end in small slices, following fixed conventions — inside a sandbox.' },
+        { titulo: 'The factory tests everything', texto: '100+ tests per system: API, rules, security and a real browser field by field. Tests are never written by whoever codes.' },
+        { titulo: 'Ships with 1 command', texto: 'Docker, Postgres, API and site live automatically — GitHub, Render, Vercel and Neon. The demos on this page were born this way.' },
+      ],
+    },
+    stackGrupos: { backend: 'Back-end & data', deploy: 'Container & deploy', ia: 'Automation & AI', frontend: 'Front-end & UX' },
     footerTitulo: "Let's talk",
     footerSub: 'Open to full stack Java/React development opportunities. Quick reply on WhatsApp.',
     footerCopy: 'built with React',
@@ -260,12 +283,13 @@ export default function App() {
           ))}
         </div>
       </div>
+      <SecaoLanterna {...t.fabrica} />
       <div id="stack" className="container">
         <Revelar as="h2">{t.stackTitulo}</Revelar>
         <Revelar as="p" className="destaques-sub">{t.stackSub}</Revelar>
         <div className="stack-groups">
-          {STACK.map(({ id, itens }, i) => (
-            <Revelar as="div" className="stack-group" delay={i * 90} key={id}>
+          {STACK.map(({ id, cor, itens }, i) => (
+            <Revelar as="div" className={`stack-group stack-${cor}`} delay={i * 90} key={id}>
               <h3 className="stack-group-title">{t.stackGrupos[id]}</h3>
               <div className="stack-badges">
                 {itens.map(item => <span className="stack-badge" key={item}>{item}</span>)}

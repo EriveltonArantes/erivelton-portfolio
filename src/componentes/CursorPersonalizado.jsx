@@ -27,10 +27,17 @@ export default function CursorPersonalizado() {
     };
 
     const animar = () => {
-      ring.current.x += (mouse.current.x - ring.current.x) * 0.18;
-      ring.current.y += (mouse.current.y - ring.current.y) * 0.18;
+      const dx = mouse.current.x - ring.current.x;
+      const dy = mouse.current.y - ring.current.y;
+      ring.current.x += dx * 0.18;
+      ring.current.y += dy * 0.18;
       if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${ring.current.x - tamanho / 2}px, ${ring.current.y - tamanho / 2}px)`;
+        // gelatina: quanto mais rápido o mouse, mais o anel estica na direção do movimento
+        const vel = Math.min(Math.hypot(dx, dy) / 120, 0.6);
+        const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+        const w = ringRef.current.offsetWidth;
+        ringRef.current.style.transform =
+          `translate(${ring.current.x - w / 2}px, ${ring.current.y - w / 2}px) rotate(${ang}deg) scale(${1 + vel}, ${1 - vel * 0.6})`;
       }
       rafRef.current = requestAnimationFrame(animar);
     };

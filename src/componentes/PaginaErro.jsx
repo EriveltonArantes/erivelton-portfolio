@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
+
+const Erro404Fisica = lazy(() => import('./Erro404Fisica.jsx')); // Matter.js só baixa quando a página de erro abre
 
 export default function PaginaErro({ lang }) {
   const t = TEXTO[lang];
@@ -14,6 +16,8 @@ export default function PaginaErro({ lang }) {
         </h1>
         <a href="#topo" className="erro-voltar">{t.voltar}</a>
       </div>
+
+      <Suspense fallback={<div className="erro-fisica" />}><Erro404Fisica dica={t.dica} /></Suspense>
 
       <div className="erro-outros">
         <h2>{t.outros}</h2>
@@ -165,6 +169,7 @@ function EfeitoZero({ efeito, idx, hover }) {
 const TEXTO = {
   pt: {
     titulo: 'esta página foi tomar sorvete',
+    dica: 'Enquanto isso: arraste e arremesse os números. Clique duplo faz eles pularem.',
     voltar: 'Voltar para o início',
     outros: 'Outros erros que já vimos por aí',
     f400: 'Requisição tão errada que o servidor nem entendeu.',
@@ -173,6 +178,7 @@ const TEXTO = {
   },
   en: {
     titulo: 'this page went out for ice cream',
+    dica: 'Meanwhile: drag and throw the numbers. Double-click makes them jump.',
     voltar: 'Back to home',
     outros: 'Other errors we\'ve seen around',
     f400: 'Request so wrong the server didn\'t even understand it.',

@@ -359,6 +359,14 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   border-radius: 14px; padding: 20px;
 }
 .stack-group-title { margin: 0 0 14px; font-size: .8rem; text-transform: uppercase; letter-spacing: 1.2px; color: #7bffb0; }
+/* cartões com a cor do grupo no topo e no título (estilo painel de observabilidade) */
+.stack-group { border-top: 2px solid var(--cor-grupo, #7bffb0); transition: transform .25s ease, box-shadow .25s ease; }
+.stack-group:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -12px var(--cor-grupo, #7bffb0); }
+.stack-group .stack-group-title { color: var(--cor-grupo, #7bffb0); }
+.stack-azul { --cor-grupo: #6ea8ff; }
+.stack-roxo { --cor-grupo: #b18cff; }
+.stack-verde { --cor-grupo: #3ee6a0; }
+.stack-rosa { --cor-grupo: #ff7ab6; }
 .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .stack-badge {
   font-size: .85rem; color: #c2c8de; background: rgba(255,255,255,.05);
@@ -561,4 +569,37 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   .cursor-dot, .cursor-ring { display: none !important; }
   .revelar { opacity: 1 !important; transform: none !important; }
   .footer-frase-fill { clip-path: inset(0 0 0 0) !important; }
+}
+
+/* 404 com física (Matter.js) */
+.erro-fisica { position: relative; width: min(900px, 100%); height: 340px; margin: 10px auto 30px;
+  border: 1px dashed rgba(255,255,255,.12); border-radius: 18px; overflow: hidden; touch-action: none; }
+.erro-fisica canvas { width: 100%; height: 100%; display: block; cursor: grab; }
+.erro-fisica canvas:active { cursor: grabbing; }
+.erro-fisica-dica { position: absolute; top: 12px; left: 0; right: 0; text-align: center;
+  font-size: .8rem; color: rgba(255,255,255,.45); pointer-events: none; }
+
+/* seção lanterna: o mouse ilumina o conteúdo */
+.lanterna { position: relative; margin: 80px 0; padding: 90px 24px; background: #05060c; overflow: hidden;
+  --lx: 50%; --ly: 40%; }
+.lanterna-conteudo { max-width: 1100px; margin: 0 auto; position: relative; }
+.lanterna h2 { font-size: clamp(1.6rem, 3.6vw, 2.6rem); margin: 10px 0 40px; max-width: 760px; }
+.lanterna-passos { list-style: none; padding: 0; margin: 0; display: grid; gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.lanterna-passos li { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 22px; }
+.lanterna-passos h3 { margin: 8px 0; font-size: 1.1rem; }
+.lanterna-passos p { margin: 0; color: #aab1c8; line-height: 1.55; font-size: .95rem; }
+.lanterna-num { font-weight: 900; font-size: 2rem; background: linear-gradient(90deg, #6ea8ff, #ff7ab6);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lanterna-sombra { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle 190px at var(--lx) var(--ly), transparent 0, rgba(5,6,12,.55) 120px, rgba(5,6,12,.97) 230px); }
+.lanterna-acesa .lanterna-sombra { display: none; }
+.lanterna-dica { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-size: .8rem;
+  color: rgba(255,255,255,.35); pointer-events: none; }
+
+/* enfeites (orbes de luz) não podem alargar a página no celular */
+html, body { overflow-x: clip; }
+/* toque: lanterna maior e sombra mais leve para dar pra ler */
+@media (hover: none) {
+  .lanterna-sombra { background: radial-gradient(circle 260px at var(--lx) var(--ly), transparent 0, rgba(5,6,12,.45) 160px, rgba(5,6,12,.82) 300px); }
 }
