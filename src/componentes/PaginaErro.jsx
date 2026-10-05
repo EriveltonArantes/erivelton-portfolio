@@ -1,4 +1,5 @@
 import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { reduzirMovimento } from '../movimento.js';
 
 const Erro404Fisica = lazy(() => import('./Erro404Fisica.jsx')); // Matter.js só baixa quando a página de erro abre
 
@@ -38,7 +39,7 @@ function OlhoSvg() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced) return;
 
     const move = (e) => {

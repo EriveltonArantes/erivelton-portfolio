@@ -10,6 +10,7 @@ import SecaoLanterna from './componentes/SecaoLanterna.jsx';
 import IntroQuarto from './componentes/IntroQuarto.jsx';
 import Rodape from './componentes/Rodape.jsx';
 import useLenis from './componentes/useLenis.js';
+import { reduzirMovimento } from './movimento.js';
 
 const CONTATO = {
   whatsapp: 'https://wa.me/5534996915734',
@@ -226,7 +227,7 @@ export default function App() {
   const [hash, setHash] = React.useState(window.location.hash);
 
   useLenis();
-  const semAnimacao = React.useMemo(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches, []);
+  const semAnimacao = React.useMemo(() => reduzirMovimento(), []);
 
   React.useEffect(() => {
     const onHashChange = () => setHash(window.location.hash);

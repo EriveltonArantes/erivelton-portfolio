@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { reduzirMovimento } from '../movimento.js';
 
 export default function CartaoProjeto({ p, t, lang }) {
   const cardRef = useRef(null);
@@ -9,7 +10,7 @@ export default function CartaoProjeto({ p, t, lang }) {
   const mover = (e) => {
     const card = cardRef.current;
     if (!card) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;

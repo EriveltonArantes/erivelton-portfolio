@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { reduzirMovimento } from '../movimento.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export default function Rodape({ t, contato }) {
   const fillRef = useRef(null);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced) {
       if (fillRef.current) fillRef.current.style.clipPath = 'inset(0 0 0 0)';
       return;

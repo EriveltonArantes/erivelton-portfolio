@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { reduzirMovimento } from '../movimento.js';
 
 export default function HeroAnimado({ titulo, sub, children }) {
   const tituloRef = useRef(null);
   const subRef = useRef(null);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced) return;
 
     const ctx = gsap.context(() => {

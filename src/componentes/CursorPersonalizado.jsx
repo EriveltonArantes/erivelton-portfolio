@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { reduzirMovimento } from '../movimento.js';
 
 export default function CursorPersonalizado() {
   const dotRef = useRef(null);
@@ -13,7 +14,7 @@ export default function CursorPersonalizado() {
   useEffect(() => {
     const mq = window.matchMedia('(pointer: fine) and (hover: hover)');
     if (!mq.matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (reduzirMovimento()) return;
 
     setAtivo(true);
     document.body.classList.add('cursor-custom');

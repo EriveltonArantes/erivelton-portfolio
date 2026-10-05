@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { reduzirMovimento } from '../movimento.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,7 +9,7 @@ export default function Revelar({ children, delay = 0, className = '', as: Tag =
   const ref = useRef(null);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced) return;
     const el = ref.current;
     if (!el) return;
@@ -50,7 +51,7 @@ export function Contador({ value }) {
 
   useEffect(() => {
     if (!match) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced) {
       setDisplay(value);
       return;

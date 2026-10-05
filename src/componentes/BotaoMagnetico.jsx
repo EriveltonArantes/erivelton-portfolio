@@ -1,10 +1,11 @@
 import React, { useRef, useMemo } from 'react';
+import { reduzirMovimento } from '../movimento.js';
 
 export default function BotaoMagnetico({ children, href, className, ...props }) {
   const ref = useRef(null);
   const reduced = useMemo(() => {
     if (typeof window === 'undefined') return true;
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return reduzirMovimento();
   }, []);
 
   const mover = (e) => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import CartaoProjeto from './CartaoProjeto.jsx';
+import { reduzirMovimento } from '../movimento.js';
 
 const CATEGORIAS = ['todos', 'gestao', 'saude', 'comercio', 'financas', 'servicos'];
 
@@ -18,7 +19,7 @@ export default function GradeProjetos({ projetos, t, lang }) {
       firstRender.current = false;
       return;
     }
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reduzirMovimento();
     if (reduced || !gridRef.current) return;
 
     const itens = [...gridRef.current.querySelectorAll('.tilt-wrap')];

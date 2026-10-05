@@ -233,7 +233,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
    sistema — as animações decorativas do hero (órbita, aurora, partículas)
    ficam sempre ativas mesmo com essa preferência ligada no SO, porque a
    ideia aqui é justamente elas nunca pararem sozinhas. */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) and (max-width: 0px) { /* desligado: ver src/movimento.js */
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 .container { max-width: 1280px; margin: 0 auto; padding: 64px 32px; }
@@ -557,7 +557,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 }
 
 /* ===== PREFERS-REDUCED-MOTION ===== */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) and (max-width: 0px) { /* desligado: ver src/movimento.js */
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

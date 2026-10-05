@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { reduzirMovimento } from '../movimento.js';
 
 // Seção escura: o mouse vira uma lanterna que revela o conteúdo. Sem mouse (celular), a luz passeia sozinha.
 export default function SecaoLanterna({ kicker, titulo, dica, passos }) {
@@ -7,7 +8,7 @@ export default function SecaoLanterna({ kicker, titulo, dica, passos }) {
   useEffect(() => {
     const el = ref.current;
     const temMouse = window.matchMedia('(pointer: fine) and (hover: hover)').matches;
-    const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const calmo = reduzirMovimento();
     if (calmo) { el.classList.add('lanterna-acesa'); return; }
 
     const posicionar = (x, y) => { el.style.setProperty('--lx', `${x}px`); el.style.setProperty('--ly', `${y}px`); };
