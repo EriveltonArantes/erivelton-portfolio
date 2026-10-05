@@ -1,31 +1,18 @@
-name: Keep-alive dos projetos do portfólio
+name: Keep-alive da sorveteria (cliente em apresentação)
 
+# Render free = 750 horas/mês para a CONTA inteira. Manter vários serviços acordados 24h esgota isso
+# em poucos dias e o Render suspende TODOS os serviços free até o mês virar. Por isso: só a sorveteria,
+# só no horário comercial (07h–20h de Brasília = 10h–23h UTC) ≈ 390 h/mês.
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/10 10-23 * * *"
   workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping backends (evita cold start do Render free)
+      - name: Ping da API da sorveteria
         run: |
-          urls=(
-            "https://banco-vitrine-banco-api.onrender.com"
-            "https://feira-livre-marketplace-api.onrender.com"
-            "https://hotel-vitrine-hotel-api.onrender.com"
-            "https://restaurante-oficial-restaurante-api.onrender.com"
-            "https://escola-vitrine-escola-api.onrender.com"
-            "https://clinica-api-api.onrender.com"
-            "https://rede-barbearias-api.onrender.com"
-            "https://amigo-fiel-petshop-api.onrender.com"
-            "https://academia-teste-pro-academia-api.onrender.com"
-            "https://oficina-mecanica-api.onrender.com"
-            "https://ead-cursos-api.onrender.com"
-            "https://leilao-online-api.onrender.com"
-          )
-          for url in "${urls[@]}"; do
-            echo "Ping: $url"
-            curl -s -o /dev/null -w "  -> HTTP %{http_code} em %{time_total}s\n" "$url" || echo "  -> falhou"
-          done
+          curl -s -o /dev/null -m 120 -w "sorveteria-api -> HTTP %{http_code} em %{time_total}s\n" \
+            "https://sorveteria-api-n4vx.onrender.com/actuator/health" || echo "falhou"
