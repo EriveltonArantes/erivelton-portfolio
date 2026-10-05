@@ -7,6 +7,7 @@ import CartaoProjeto from './componentes/CartaoProjeto.jsx';
 import GradeProjetos from './componentes/GradeProjetos.jsx';
 import PaginaErro from './componentes/PaginaErro.jsx';
 import SecaoLanterna from './componentes/SecaoLanterna.jsx';
+import IntroQuarto from './componentes/IntroQuarto.jsx';
 import Rodape from './componentes/Rodape.jsx';
 import useLenis from './componentes/useLenis.js';
 
@@ -73,6 +74,7 @@ const PROJETOS = [
 const T = {
   pt: {
     nav: { sobre: 'Sobre', projetos: 'Projetos', stack: 'Stack', contato: 'Contato' },
+    intro: { rotulo: 'Animação: um menino liga o computador e a câmera entra na tela', pular: 'Pular intro ↓', legendas: ['Todo dev começou mais ou menos assim…', 'Mochila na cama, cadeira, computador…', 'Role para entrar no computador ↓'] },
     heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
     heroSub: '13 anos gerindo operação real, quase 3 construindo sistemas completos em produção: back-end em Spring Boot com JWT, JPA/Hibernate e PostgreSQL, front-end em React e Angular.',
     heroCtaProjetos: 'Ver projetos',
@@ -122,6 +124,7 @@ const T = {
   },
   en: {
     nav: { sobre: 'About', projetos: 'Projects', stack: 'Stack', contato: 'Contact' },
+    intro: { rotulo: 'Animation: a boy turns on the computer and the camera dives into the screen', pular: 'Skip intro ↓', legendas: ['Every dev started more or less like this…', 'Backpack on the bed, chair, computer…', 'Scroll to dive into the computer ↓'] },
     heroTitulo: 'Full Stack Developer — Java/Spring Boot & React/Angular',
     heroSub: '13 years managing real-world operations, almost 3 building complete systems in production: back-end in Spring Boot with JWT, JPA/Hibernate and PostgreSQL, front-end in React and Angular.',
     heroCtaProjetos: 'View projects',
@@ -223,6 +226,7 @@ export default function App() {
   const [hash, setHash] = React.useState(window.location.hash);
 
   useLenis();
+  const semAnimacao = React.useMemo(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches, []);
 
   React.useEffect(() => {
     const onHashChange = () => setHash(window.location.hash);
@@ -245,6 +249,7 @@ export default function App() {
     <div>
       <CursorPersonalizado />
       <Navbar lang={lang} setLang={setLang} t={t} />
+      {!semAnimacao && <IntroQuarto textos={t.intro} />}
       <HeroAnimado titulo={t.heroTitulo} sub={t.heroSub}>
         <div className="hero-cta-row">
           <BotaoMagnetico className="hero-cta hero-cta-primary" href="#projetos">{t.heroCtaProjetos}</BotaoMagnetico>
