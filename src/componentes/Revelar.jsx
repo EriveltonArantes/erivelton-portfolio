@@ -23,7 +23,7 @@ export default function Revelar({ children, delay = 0, className = '', as: Tag =
           opacity: 1,
           y: 0,
           duration: 0.8,
-          delay,
+          delay: delay / 1000, // delay chega em ms (ex. i * 90); o GSAP usa segundos
           ease: 'power3.out',
         });
       },
